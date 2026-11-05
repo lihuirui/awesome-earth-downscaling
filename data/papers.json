@@ -1,0 +1,185 @@
+[
+  {
+    "title": "Residual Corrective Diffusion Modeling for Km-scale Atmospheric Downscaling",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2309.15214",
+    "code_url": "https://github.com/NVIDIA/physicsnemo",
+    "tags": [
+      "CorrDiff",
+      "diffusion",
+      "Earth-2",
+      "NVIDIA"
+    ],
+    "venue": "arXiv",
+    "note": "CorrDiff: UNet mean + residual diffusion; 25km→2km Taiwan case."
+  },
+  {
+    "title": "Generative diffusion-based downscaling for climate",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2404.17752",
+    "code_url": "https://github.com/robbiewatt1/ClimateDiffuse",
+    "tags": [
+      "diffusion",
+      "ERA5",
+      "continental"
+    ],
+    "venue": "arXiv",
+    "note": "Diffusion vs U-Net on ERA5 USA 2°→0.25°."
+  },
+  {
+    "title": "Generating High-Resolution Regional Precipitation Using Conditional Diffusion Model",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2312.07112",
+    "code_url": "",
+    "tags": [
+      "diffusion",
+      "precipitation",
+      "CESM"
+    ],
+    "venue": "arXiv",
+    "note": "Conditional DDPM for regional precip 4x/8x."
+  },
+  {
+    "title": "A Generative Deep Learning Approach to Stochastic Downscaling of Precipitation Forecasts",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2204.02028",
+    "code_url": "",
+    "tags": [
+      "GAN",
+      "precipitation",
+      "stochastic"
+    ],
+    "venue": "JAMES / arXiv",
+    "note": "GAN/VAE-GAN precip forecast downscaling with radar truth."
+  },
+  {
+    "title": "DeepSD: Generating High Resolution Climate Change Projections through Single Image Super-Resolution",
+    "year": 2017,
+    "url": "https://arxiv.org/abs/1703.03126",
+    "code_url": "https://github.com/tjvandal/deepsd",
+    "tags": [
+      "DeepSD",
+      "SRCNN",
+      "precipitation"
+    ],
+    "venue": "KDD 2017",
+    "note": "Stacked SRCNN precip downscaling landmark."
+  },
+  {
+    "title": "Are Deep Learning Methods Suitable for Downscaling Global Climate Projections? An Intercomparison for Temperature and Precipitation over Spain",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2411.05850",
+    "code_url": "https://doi.org/10.5281/zenodo.14016954",
+    "tags": [
+      "survey",
+      "DeepESD",
+      "U-Net",
+      "PP"
+    ],
+    "venue": "arXiv",
+    "note": "Intercomparison DeepESD vs U-Net for GCM projection downscaling."
+  },
+  {
+    "title": "Deep Learning and Foundation Models for Weather Prediction: A Survey",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2501.06907",
+    "code_url": "https://github.com/JimengShi/DL-Foundation-Models-Weather",
+    "tags": [
+      "survey",
+      "foundation-models",
+      "weather"
+    ],
+    "venue": "arXiv",
+    "note": "Survey with curated code/datasets; covers downscaling context."
+  },
+  {
+    "title": "A Probabilistic U-Net Approach to Downscaling Climate Simulations",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2511.03197",
+    "code_url": "https://github.com/MaryamAlipourH/prob-unet-climate-downscaling",
+    "tags": [
+      "U-Net",
+      "probabilistic",
+      "precipitation",
+      "temperature"
+    ],
+    "venue": "NeurIPS 2025 AI4Science Workshop",
+    "note": "Probabilistic U-Net for 16× climate downscaling."
+  },
+  {
+    "title": "Fourier Neural Operators for Arbitrary Resolution Climate Data Downscaling",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2305.14452",
+    "code_url": "",
+    "tags": [
+      "FNO",
+      "neural-operator"
+    ],
+    "venue": "arXiv",
+    "note": "FNO for arbitrary-resolution climate downscaling."
+  },
+  {
+    "title": "Hard-Constrained Deep Learning for Climate Downscaling",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2208.05424",
+    "code_url": "",
+    "tags": [
+      "physics-informed",
+      "constraints"
+    ],
+    "venue": "arXiv",
+    "note": "Hard physical constraints for DL downscaling."
+  },
+  {
+    "title": "Increasing the accuracy and resolution of precipitation forecasts using deep generative models",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2203.12297",
+    "code_url": "",
+    "tags": [
+      "generative",
+      "precipitation"
+    ],
+    "venue": "AISTATS",
+    "note": "Deep generative precip forecast downscaling."
+  },
+  {
+    "title": "Machine learning emulation of a local-scale UK climate model",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2211.16116",
+    "code_url": "",
+    "tags": [
+      "emulation",
+      "UK",
+      "diffusion"
+    ],
+    "venue": "arXiv",
+    "note": "ML emulation / local-scale UK climate (cited with diffusion downscaling)."
+  },
+  {
+    "title": "Debias Coarsely, Sample Conditionally: Statistical Downscaling through Optimal Transport and Probabilistic Diffusion Models",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2305.15618",
+    "code_url": "",
+    "tags": [
+      "diffusion",
+      "OT",
+      "statistical"
+    ],
+    "venue": "arXiv",
+    "note": "OT + diffusion for statistical downscaling."
+  },
+  {
+    "title": "Precipitation Downscaling with Spatiotemporal Video Diffusion",
+    "year": 2024,
+    "url": "https://github.com/mandt-lab/STVD",
+    "code_url": "https://github.com/mandt-lab/STVD",
+    "tags": [
+      "diffusion",
+      "precipitation",
+      "video",
+      "NeurIPS"
+    ],
+    "venue": "NeurIPS 2024",
+    "note": "NeurIPS 2024 paper code: spatiotemporal video diffusion for precip downscaling (link is GitHub; add arXiv when verified)."
+  }
+]
