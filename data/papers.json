@@ -181,5 +181,186 @@
     ],
     "venue": "NeurIPS 2024",
     "note": "NeurIPS 2024 paper code: spatiotemporal video diffusion for precip downscaling (link is GitHub; add arXiv when verified)."
+  },
+  {
+    "title": "Downscaling in remote sensing",
+    "year": 2013,
+    "url": "https://doi.org/10.1016/j.jag.2012.04.012",
+    "code_url": "",
+    "tags": [
+      "survey",
+      "remote-sensing",
+      "geostatistics",
+      "Atkinson"
+    ],
+    "venue": "Int. J. Appl. Earth Obs. Geoinf.",
+    "note": "Foundational RS downscaling review (area-to-point + super-resolution mapping).",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "downscale-satelliteLST",
+    "year": 2020,
+    "url": "https://github.com/pansism/downscale-satelliteLST",
+    "code_url": "https://github.com/pansism/downscale-satelliteLST",
+    "tags": [
+      "LST",
+      "thermal",
+      "Python",
+      "resource"
+    ],
+    "venue": "GitHub",
+    "note": "Python toolkit for satellite LST downscaling (ensemble regression + residual correction).",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "A review of spatial downscaling of satellite remotely sensed soil moisture",
+    "year": 2017,
+    "url": "https://doi.org/10.1002/2016RG000543",
+    "code_url": "",
+    "tags": [
+      "survey",
+      "soil-moisture",
+      "remote-sensing"
+    ],
+    "venue": "Reviews of Geophysics",
+    "note": "Peng et al. comprehensive review of satellite SM spatial downscaling methods.",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "An Overview of Theoretical and Practical Issues in Spatial Downscaling of Coarse Resolution Satellite-derived Products",
+    "year": 2019,
+    "url": "https://doi.org/10.7780/kjrs.2019.35.4.8",
+    "code_url": "",
+    "tags": [
+      "survey",
+      "remote-sensing",
+      "theory"
+    ],
+    "venue": "Korean Journal of Remote Sensing",
+    "note": "Theory/practice overview of spatial downscaling for coarse satellite products.",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "Downscaling a Satellite Thermal Image from 1000 m to 10 m (Python)",
+    "year": 2021,
+    "url": "https://towardsdatascience.com/downscaling-a-satellite-thermal-image-from-1000-m-to-10-m-python-3b2ed19ff103/",
+    "code_url": "https://github.com/TIDOP-USAL/LST_S3_10m",
+    "tags": [
+      "LST",
+      "Sentinel-3",
+      "Sentinel-2",
+      "tutorial",
+      "Python"
+    ],
+    "venue": "Towards Data Science / tutorial",
+    "note": "Aboutalebi tutorial: Sentinel-3 thermal 1km→10m via Sentinel-2 NDVI regression.",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "Evaluating the feasibility of using Sentinel-2 and Sentinel-3 satellites for high-resolution evapotranspiration estimations",
+    "year": 2019,
+    "url": "https://doi.org/10.1016/j.rse.2018.11.019",
+    "code_url": "",
+    "tags": [
+      "ET",
+      "Sentinel-2",
+      "Sentinel-3",
+      "thermal-sharpening"
+    ],
+    "venue": "Remote Sensing of Environment",
+    "note": "S2+S3 fusion feasibility for high-res ET (thermal sharpening).",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "Combining Landsat 8 and Sentinel-2 Data in Google Earth Engine to Derive Higher Resolution Land Surface Temperature Maps in Urban Environment",
+    "year": 2022,
+    "url": "https://doi.org/10.3390/rs14164076",
+    "code_url": "https://github.com/palubad/LST-downscaling-to-10m-GEE",
+    "tags": [
+      "LST",
+      "GEE",
+      "Landsat",
+      "Sentinel-2",
+      "urban"
+    ],
+    "venue": "Remote Sensing",
+    "note": "Urban LST downscaling L8→10m with S2 indices in GEE.",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "A Data Mining Approach for Sharpening Thermal Satellite Imagery over Land",
+    "year": 2012,
+    "url": "https://doi.org/10.3390/rs4113287",
+    "code_url": "https://github.com/radosuav/pyDMS",
+    "tags": [
+      "thermal",
+      "DMS",
+      "data-mining",
+      "LST"
+    ],
+    "venue": "Remote Sensing",
+    "note": "Data Mining Sharpener (DMS); Python reimplementation pyDMS.",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "Generative Adversarial Models for Extreme Geospatial Downscaling",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2402.14049",
+    "code_url": "https://github.com/LiGuiye/LAG_Climate",
+    "tags": [
+      "GAN",
+      "extreme-downscaling",
+      "climate",
+      "LAG"
+    ],
+    "venue": "arXiv / Int. J. Appl. Earth Obs. Geoinf. 2025",
+    "note": "LAG conditional GAN for extreme geospatial downscaling up to 64× (wind/solar).",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "TAUT: A Remote Sensing-Based Terrain-Adaptive U-Net Transformer for High-Resolution Spatiotemporal Downscaling of Temperature over Southwest China",
+    "year": 2026,
+    "url": "https://doi.org/10.3390/rs18030416",
+    "code_url": "",
+    "tags": [
+      "U-Net",
+      "Transformer",
+      "temperature",
+      "terrain",
+      "remote-sensing"
+    ],
+    "venue": "Remote Sensing",
+    "note": "Terrain-adaptive U-Net–Swin Transformer; 0.1°→0.01° and 3h→1h T2m.",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "Trustworthy Super-Resolution of Multispectral Sentinel-2 Imagery With Latent Diffusion",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/jstars.2025.3542220",
+    "code_url": "https://github.com/ESAOpenSR/opensr-model",
+    "tags": [
+      "diffusion",
+      "Sentinel-2",
+      "OpenSR",
+      "super-resolution"
+    ],
+    "venue": "IEEE JSTARS",
+    "note": "ESA OpenSR LDSR-S2 latent diffusion SR for S2 RGB-NIR (10m→2.5m) with uncertainty.",
+    "source": "milan-janosov-2026"
+  },
+  {
+    "title": "Harnessing Multi-Source Data and Deep Learning for High-Resolution Land Surface Temperature Gap-Filling Supporting Climate Change Adaptation Activities",
+    "year": 2025,
+    "url": "https://doi.org/10.3390/rs17020318",
+    "code_url": "",
+    "tags": [
+      "LST",
+      "gap-filling",
+      "deep-learning",
+      "ECOSTRESS"
+    ],
+    "venue": "Remote Sensing",
+    "note": "Kustura et al. multi-source DL for high-res LST gap-filling (comment-extra in Milan list).",
+    "source": "milan-janosov-2026"
   }
 ]

@@ -20,6 +20,7 @@
   - [Transformer & Neural Operators](#transformer--neural-operators)
   - [Physics-informed & Hybrid](#physics-informed--hybrid)
 - [Hydrology-focused Downscaling / 水文降尺度](#hydrology-focused-downscaling--水文降尺度)
+- [Remote Sensing Spatial Downscaling / 遥感空间降尺度](#remote-sensing-spatial-downscaling--遥感空间降尺度)
 - [Datasets & Benchmarks / 数据集与基准](#datasets--benchmarks--数据集与基准)
 - [Libraries & Toolkits / 工具库](#libraries--toolkits--工具库)
 - [Recent arXiv (2023–2026) / 近年预印本](#recent-arxiv-20232026--近年预印本)
@@ -88,6 +89,30 @@
 ### Physics-informed & Hybrid
 
 - **Hard-Constrained Deep Learning for Climate Downscaling** — Harder et al. [[arXiv](https://arxiv.org/abs/2208.05424)] — _Hard physical constraints in DL downscaling._
+
+## Remote Sensing Spatial Downscaling / 遥感空间降尺度
+
+Curated from Milan Janosov’s [10(+2) Papers & Resources on Spatial Downscaling in Remote Sensing](https://milanjanosov.substack.com/p/10-papers-and-resources-on-spatial) ([X post](https://x.com/milan_janosov/status/2112440683835310405)). **All 12 items are spatial downscaling** (遥感空间降尺度；ML 语境常称 super-resolution).
+
+> Caveat from the thread: downscaling does not invent new measurements—detail must come from a sharper guide (e.g. 10 m optical guiding 1 km thermal); otherwise detail is generative, not measured. Prefer products with error bars / uncertainty maps vs true HR observations.
+
+### Surveys & Theory / 综述与理论
+- **Downscaling in remote sensing** — Atkinson (2013) [[DOI](https://doi.org/10.1016/j.jag.2012.04.012)] — _Foundational RS downscaling review (area-to-point + super-resolution mapping)._
+- **A review of spatial downscaling of satellite remotely sensed soil moisture** — Peng et al. (2017) [[DOI](https://doi.org/10.1002/2016RG000543)] — _Reviews of Geophysics survey of satellite SM downscaling._
+- **An Overview of Theoretical and Practical Issues in Spatial Downscaling of Coarse Resolution Satellite-derived Products** — Park & Kim (2019) [[DOI](https://doi.org/10.7780/kjrs.2019.35.4.8)] — _Theory/practice overview for coarse satellite products._
+
+### Thermal / LST / Evapotranspiration / 热红外·地表温度·蒸散
+- **downscale-satelliteLST** — Python LST downscaling toolkit [[GitHub](https://github.com/pansism/downscale-satelliteLST)]
+- **Downscaling a Satellite Thermal Image from 1000 m to 10 m (Python)** — Aboutalebi tutorial [[Article](https://towardsdatascience.com/downscaling-a-satellite-thermal-image-from-1000-m-to-10-m-python-3b2ed19ff103/)] [[Code](https://github.com/TIDOP-USAL/LST_S3_10m)] — _Sentinel-3 1 km → 10 m via Sentinel-2 NDVI._
+- **Evaluating the feasibility of using Sentinel-2 and Sentinel-3 for high-resolution ET** — (2019) [[DOI](https://doi.org/10.1016/j.rse.2018.11.019)] *(RSE)* — _S2+S3 thermal sharpening for field-scale ET._
+- **Combining Landsat 8 and Sentinel-2 in GEE for higher-resolution urban LST** — Onačillová et al. (2022) [[DOI](https://doi.org/10.3390/rs14164076)] [[Code](https://github.com/palubad/LST-downscaling-to-10m-GEE)] — _L8 LST → 10 m with S2 indices in Google Earth Engine._
+- **A Data Mining Approach for Sharpening Thermal Satellite Imagery over Land** — Gao et al. (2012) [[DOI](https://doi.org/10.3390/rs4113287)] [[Code](https://github.com/radosuav/pyDMS)] — _Data Mining Sharpener (DMS); pyDMS reimplementation._
+- **High-resolution LST gap-filling with multi-source DL** — Kustura et al. (2025) [[DOI](https://doi.org/10.3390/rs17020318)] — _CNN gap-filling / high-res LST (comment #12)._
+
+### Deep Learning / Generative / 深度学习
+- **Generative Adversarial Models for Extreme Geospatial Downscaling** — Li & Cao (2024/2025) [[arXiv](https://arxiv.org/abs/2402.14049)] [[Code](https://github.com/LiGuiye/LAG_Climate)] — _LAG conditional GAN; up to 64× wind/solar._
+- **TAUT: Terrain-Adaptive U-Net Transformer for spatiotemporal temperature downscaling** — (2026) [[DOI](https://doi.org/10.3390/rs18030416)] — _0.1°→0.01°, 3 h→1 h T2m over SW China with terrain RS._
+- **ESA OpenSR — Trustworthy SR of multispectral Sentinel-2 with latent diffusion** — Donike et al. (2025) [[DOI](https://doi.org/10.1109/jstars.2025.3542220)] [[Code](https://github.com/ESAOpenSR/opensr-model)] — _LDSR-S2 10 m→2.5 m RGB-NIR with uncertainty (comment #11)._
 
 ## Hydrology-focused Downscaling / 水文降尺度
 
