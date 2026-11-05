@@ -362,5 +362,82 @@
     "venue": "Remote Sensing",
     "note": "Kustura et al. multi-source DL for high-res LST gap-filling (comment-extra in Milan list).",
     "source": "milan-janosov-2026"
+  },
+  {
+    "title": "Do we really need bigger AI weather forecasting models to improve resolution? (HF blog / tutorial)",
+    "year": 2026,
+    "url": "https://huggingface.co/blog/EmmaScharfmann/downscaling-a-weather-forecasting-model",
+    "code_url": "https://github.com/EmmaScharfmann/weather-forecast-model-downscaler",
+    "tags": [
+      "tutorial",
+      "U-Net",
+      "ensemble",
+      "AIFS",
+      "CERRA",
+      "ERA5",
+      "temperature",
+      "France"
+    ],
+    "venue": "Hugging Face Blog",
+    "note": "Small ~2M U-Net residual ensemble downscaler: AIFS-ENS ~28km→5.5km T2m over France; fair CRPS; HF model+demo.",
+    "source": "hf-blog-emmascharfmann-2026"
+  },
+  {
+    "title": "AIFS-CRPS: ensemble forecasting using a model trained with a loss function based on the continuous ranked probability score",
+    "year": 2026,
+    "url": "https://doi.org/10.1038/s44387-026-00073-7",
+    "code_url": "https://huggingface.co/ecmwf/aifs-ens-1.0",
+    "tags": [
+      "AIFS",
+      "ensemble",
+      "CRPS",
+      "ECMWF"
+    ],
+    "venue": "npj Artificial Intelligence",
+    "note": "AIFS-ENS / AIFS-CRPS paper (coarse input for HF France downscaler tutorial).",
+    "source": "hf-blog-emmascharfmann-2026"
+  },
+  {
+    "title": "The ERA5 global reanalysis",
+    "year": 2020,
+    "url": "https://doi.org/10.1002/qj.3803",
+    "code_url": "",
+    "tags": [
+      "ERA5",
+      "reanalysis",
+      "dataset"
+    ],
+    "venue": "Q. J. R. Meteorol. Soc.",
+    "note": "ERA5 (0.25°) as coarse training field in HF downscaler tutorial.",
+    "source": "hf-blog-emmascharfmann-2026"
+  },
+  {
+    "title": "CERRA, the Copernicus European Regional Reanalysis system",
+    "year": 2024,
+    "url": "https://doi.org/10.1002/qj.4764",
+    "code_url": "",
+    "tags": [
+      "CERRA",
+      "reanalysis",
+      "dataset",
+      "Europe"
+    ],
+    "venue": "Q. J. R. Meteorol. Soc.",
+    "note": "CERRA (~5.5 km) fine target for HF France temperature downscaler.",
+    "source": "hf-blog-emmascharfmann-2026"
+  },
+  {
+    "title": "Fair scores for ensemble forecasts",
+    "year": 2014,
+    "url": "https://doi.org/10.1002/qj.2270",
+    "code_url": "",
+    "tags": [
+      "CRPS",
+      "ensemble",
+      "verification"
+    ],
+    "venue": "Q. J. R. Meteorol. Soc.",
+    "note": "Fair CRPS used as training loss for the ensemble downscaler.",
+    "source": "hf-blog-emmascharfmann-2026"
   }
 ]

@@ -24,6 +24,7 @@
 - [Datasets & Benchmarks / 数据集与基准](#datasets--benchmarks--数据集与基准)
 - [Libraries & Toolkits / 工具库](#libraries--toolkits--工具库)
 - [Recent arXiv (2023–2026) / 近年预印本](#recent-arxiv-20232026--近年预印本)
+- [Tutorials & Practical Guides / 教程与实践](#tutorials--practical-guides--教程与实践)
 - [Related Awesome Lists / 相关列表](#related-awesome-lists--相关列表)
 - [Maintenance](#maintenance)
 
@@ -158,6 +159,38 @@ Selected verified entries (also mirrored in `data/papers.json`):
 - 2022 — Generative precip forecasts (Price & Rasp) [[arXiv](https://arxiv.org/abs/2203.12297)]
 - 2022 — Hard-constrained DL climate downscaling [[arXiv](https://arxiv.org/abs/2208.05424)]
 - 2022 — UK local-scale climate ML emulation [[arXiv](https://arxiv.org/abs/2211.16116)]
+
+## Tutorials & Practical Guides / 教程与实践
+
+### Hugging Face — Small U-Net downscaler on AIFS-ENS (France T2m)
+Blog (2026-10-20): [Do we really need bigger AI weather forecasting models to improve resolution?](https://huggingface.co/blog/EmmaScharfmann/downscaling-a-weather-forecasting-model) — Emma Scharfmann, Aritra Roy Gosthipaty, Kashif Rasul.
+
+**One-line takeaway:** 不必总造更大的全球细网格模型；可在现有 0.25° 预报上叠一个小残差降尺度器学地形/海岸局地细节。
+
+**Recipe (compressed):**
+1. **Task** — ensemble 2 m temperature, France, ~28 km (0.25°) → ~5.5 km (~0.05°).
+2. **Train data** — coarse ERA5 + fine CERRA (2014–2019 train / 2020 eval); interpolate coarse→fine grid; learn **residual** (fine − interp).
+3. **Statics** — fine orography, height difference vs coarse terrain, land fraction, distance-to-coast, lon/lat, season & time-of-day.
+4. **Model** — ~2M-param U-Net; inject noise → multiple fine samples per coarse member; **fair CRPS** loss (land only).
+5. **Train cost** — ~1 hour on one GPU (~20 epochs).
+6. **Inference** — plug onto any same-var 0.25° France forecast (demo: AIFS-ENS; also tried GEFS / mention Aurora, Atlas). 10 coarse × 4 samples → 40 members; seconds per run.
+7. **Reported skill (vs Météo-France stations)** — first 2 days: RMSE −14%, CRPS −21%; 10 days: −9% / −14%. Corrects mountains & coasts; does **not** fix large-scale bias of the coarse model.
+8. **Limits called out** — only ~10–30% of coarse–fine difference predictable from these inputs; strong diurnal error cycle; demo ≠ full paper evaluation; power spectrum is a key diagnostic.
+
+**Artifacts**
+- Code: [weather-forecast-model-downscaler](https://github.com/EmmaScharfmann/weather-forecast-model-downscaler) (`tutorial_inference.ipynb`, `training_tutorial.ipynb`)
+- Model: [EmmaScharfmann/france-temperature-downscaler](https://huggingface.co/EmmaScharfmann/france-temperature-downscaler)
+- Demo Space: [downscaling-demo](https://huggingface.co/spaces/EmmaScharfmann/downscaling-demo)
+- Stations dataset: [EmmaScharfmann/france-stations](https://huggingface.co/datasets/EmmaScharfmann/france-stations)
+- Coarse AI models mentioned: [ecmwf/aifs-ens-1.0](https://huggingface.co/ecmwf/aifs-ens-1.0), [microsoft/aurora](https://huggingface.co/microsoft/aurora), [nvidia/atlas-era5](https://huggingface.co/nvidia/atlas-era5)
+
+**Formal papers cited in the blog (4):**
+- Lang et al. (2026) AIFS-CRPS [[DOI](https://doi.org/10.1038/s44387-026-00073-7)]
+- Hersbach et al. (2020) ERA5 [[DOI](https://doi.org/10.1002/qj.3803)]
+- Ridal et al. (2024) CERRA [[DOI](https://doi.org/10.1002/qj.4764)]
+- Ferro (2014) Fair ensemble scores / CRPS [[DOI](https://doi.org/10.1002/qj.2270)]
+
+Related (mentioned, not a formal ref): Google DeepMind [WeatherNext 3](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/) (~5 km surface T/q, closed).
 
 ## Related Awesome Lists / 相关列表
 

@@ -21,3 +21,6 @@ Every ~3 days: search new arXiv/GitHub hits for weather/climate/hydro downscalin
 
 ## 2026-11-05 — Milan Janosov RS downscaling list
 Imported all **12/12** spatial-downscaling items from [Milan’s Substack](https://milanjanosov.substack.com/p/10-papers-and-resources-on-spatial) / [X](https://x.com/milan_janosov/status/2112440683835310405) into README section *Remote Sensing Spatial Downscaling* +  (DOI/arXiv/GitHub verified; LinkedIn shortlinks resolved via titles).
+
+## 2026-11-05 — HF AIFS downscaler blog
+Extracted **4 formal papers** from References + compressed tutorial (U-Net residual ensemble, ERA5→CERRA, fair CRPS) into README *Tutorials* section; linked code/model/demo/stations. WeatherNext 3 noted as related mention only.
