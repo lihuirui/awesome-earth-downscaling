@@ -19,6 +19,8 @@
   - [GAN / CNN / U-Net](#gan--cnn--u-net)
   - [Transformer & Neural Operators](#transformer--neural-operators)
   - [Physics-informed & Hybrid](#physics-informed--hybrid)
+  - [Embedding-conditioned probabilistic downscaling / 嵌入条件概率降尺度](#embedding-conditioned-probabilistic-downscaling--嵌入条件概率降尺度)
+  - [Related foundation models, fusion & transfer / 相关基础模型、融合与迁移](#related-foundation-models-fusion--transfer--相关基础模型融合与迁移)
 - [Hydrology-focused Downscaling / 水文降尺度](#hydrology-focused-downscaling--水文降尺度)
 - [Remote Sensing Spatial Downscaling / 遥感空间降尺度](#remote-sensing-spatial-downscaling--遥感空间降尺度)
 - [Datasets & Benchmarks / 数据集与基准](#datasets--benchmarks--数据集与基准)
@@ -61,7 +63,7 @@
 
 - **CorrDiff (Residual Corrective Diffusion)** — Mardani, Brenowitz, Cohen, Pathak et al. (2023) [[arXiv](https://arxiv.org/abs/2309.15214)] — _Two-step UNet mean + corrector diffusion; km-scale atmospheric downscaling (e.g. 25 km → 2 km); core Earth-2 generative downscaling method._
 - **PhysicsNeMo CorrDiff example** — NVIDIA training/inference recipes [[Docs](https://docs.nvidia.com/physicsnemo/latest/physicsnemo/examples/weather/corrdiff/README.html)] [[Code](https://github.com/NVIDIA/physicsnemo)] — _Official example (legacy path; see also regional weather diffusion)._
-- **Earth2Studio** — NVIDIA open framework for AI weather/climate workflows; includes CorrDiff diagnostics models [[GitHub](https://github.com/NVIDIA/earth2studio)] [[CorrDiff source](https://github.com/NVIDIA/earth2studio/blob/main/earth2studio/models/dx/corrdiff.py)]
+- **Earth2Studio** — NVIDIA toolkit, not a paper: composable Python inference pipeline with a unified API across models, data sources, and outputs, including CorrDiff downscaling [[GitHub](https://github.com/NVIDIA/earth2studio)] [[Docs](https://nvidia.github.io/earth2studio/)] [[CorrDiff source](https://github.com/NVIDIA/earth2studio/blob/main/earth2studio/models/dx/corrdiff.py)] — _No single author list or publication date. README warns the release after 0.20.0 is a breaking 1.0.0._ 中文要点：统一模型、数据源和输出接口，可复用组合式预报—降尺度流程；它是工具库，不是新论文。
 - **CorrDiff NIM / API overview** — production-oriented CorrDiff downscaling service docs [[Docs](https://docs.nvidia.com/nim/earth-2/corrdiff/latest/overview.html.md)]
 - **CorrDiff US (GEFS→HRRR)** — CONUS generative downscaling model card [[API ref](https://docs.api.nvidia.com/nim/reference/nvidia-corrdiff)]
 - **PrecipCorrDiff** — Kumar, Chattopadhyay, Bachhav et al. (2026) [[arXiv](https://arxiv.org/abs/2610.19994)] — _CorrDiff-style residual diffusion for IMD precipitation 0.25°→0.0625°; improves extremes & spatial bias vs SRGAN / original CorrDiff._
@@ -75,7 +77,7 @@
 - **STVD — Precipitation Downscaling with Spatiotemporal Video Diffusion** — (NeurIPS 2024) [[Code](https://github.com/mandt-lab/STVD)] — _Spatiotemporal video diffusion for precip downscaling._
 - **WassDiff** — generative precip downscaling focused on extremes [[GitHub](https://github.com/Way-Yuhao/WassDiff)]
 - **PrecipCorrDiff** — see Earth-2 section [[arXiv](https://arxiv.org/abs/2610.19994)]
-- **Foundation model–conditioned precip diffusion** — Ribeiro et al. (2026) [[arXiv](https://arxiv.org/abs/2608.25858)] — _Concat vs cross-attn vs frozen Prithvi WxC encoder for daily precip DDPM (Colorado River Basin)._
+- **Precipitation Downscaling Using Foundation Model-Conditioned Diffusion** — Ribeiro et al. (2026) [[arXiv](https://arxiv.org/abs/2608.25858)] — _Direct precip downscaling, Colorado River Basin: ERA5 aggregated to 1° → ERA5-Land 0.1° (not gauge truth). Concatenation wins pointwise CRPS/MSE; cross-attention (learned conv and frozen Prithvi WxC) improves distribution/extremes and is more data-efficient. Single basin, three test years. No code or checkpoint URL in the inspected paper._ 中文要点：冻结天气基础模型编码器，通过交叉注意力约束降水扩散生成；重点比较像素误差与极端/频谱保真度取舍，不能声称基础模型全面胜出。
 - **CPMGEM-hourly (video diffusion)** — Addison, Kendon & Watson (2026) [[arXiv](https://arxiv.org/abs/2610.26145)] — _60 km daily predictors → 8.8 km hourly precip emulating Met Office CPM; flood extremes._
 - **Multivariate monthly→daily spatio-temporal diffusion** — Huang et al. (2026) [[arXiv](https://arxiv.org/abs/2610.19885)] — _Conditional guidance: monthly 1° T+precip → daily 0.25° without retraining._
 - **Flow matching for convective-scale precip** — Wetherell (2026) [[arXiv](https://arxiv.org/abs/2606.00281)] [[Code](https://github.com/mo-tomaswetherell/mo-flow-sg)] — _Conditional flow matching downscaling (mo-flow-sg)._
@@ -98,6 +100,25 @@
 ### Physics-informed & Hybrid
 
 - **Hard-Constrained Deep Learning for Climate Downscaling** — Harder et al. [[arXiv](https://arxiv.org/abs/2208.05424)] — _Hard physical constraints in DL downscaling._
+
+### Embedding-conditioned probabilistic downscaling / 嵌入条件概率降尺度
+
+> Direct probabilistic weather downscaling to stations. The 10 m figure is the surface-embedding resolution, not the weather output grid.
+
+> 直接的站点概率降尺度。10 米指地表嵌入分辨率，不是天气输出网格。
+
+- **Earth observation embeddings are effective subgrid descriptors for probabilistic weather downscaling** — Sousa, Tebbutt, Jaffer, Young, Madhavapeddy & Turner (2026) [[arXiv](https://arxiv.org/abs/2608.12271)] [[Code](https://github.com/pedro15sousa/tessera-downscaling)] — _~25 km ERA5/Aurora fields → arbitrary stations with ConvCNP; frozen 10 m Tessera patches (64×64) compressed to 16 dimensions by a VAE. Five regions; stations held out in space and time. Reported CRPS gains vs topography-only are station scores: 11.5% (T2m), 6.2% (10 m wind), not a 10 m weather grid. Marginal uncertainty only. Year only. Code is cited by the paper and was not independently inspected. v1 title uses “sub-grid”._ 中文要点：将遥感基础模型嵌入作为亚网格地表描述符，接入站点概率降尺度；区分 10 米地表嵌入与天气输出分辨率，评估时做空间与时间双重留出。
+
+### Related foundation models, fusion & transfer / 相关基础模型、融合与迁移
+
+> Enabling context, not demonstrated weather downscaling: heterogeneous-input forecasting (ESFM), remote-sensing modality translation (Any2Any), forecast fusion (MoWE), and catchment-embedding rainfall–runoff transfer.
+
+> 以下四条是可借鉴的相关工作，不是已经证明的天气降尺度：异构输入预报、遥感模态转换、预报融合、流域嵌入的径流迁移。
+
+- **Mixture of Weather Experts (MoWE) for Weather Forecasting** — NVIDIA PhysicsNeMo; individual authors and release date are not on the example page [[Docs](https://docs.nvidia.com/physicsnemo/latest/physicsnemo/examples/weather/mixture_of_experts/readme.html)] [[Code](https://github.com/NVIDIA/physicsnemo)] — _Official documentation example, not a standalone paper. A gating network mixes Aurora, Pangu-Weather, and FCN3 forecasts with learned weights and an optional bias; a DiT conditions on lead time and, in the probabilistic variant, noise. Deterministic and probabilistic (CRPS) variants; Earth2Studio generates the expert training forecasts. Multi-TB storage; the DiT design is marked experimental. No checkpoint is listed here._ 中文要点：多天气模型输出经门控网络动态加权，含偏差项与概率集合版本；可借鉴专家融合和提前量条件化，但是预报融合，不是来源证明的降尺度对照。
+- **Earth System Foundation Model (ESFM): A unified framework for heterogeneous data integration and forecasting** — Ozdemir et al. (2026) [[arXiv](https://arxiv.org/abs/2605.00850)] [[Code](https://github.com/swiss-ai/ESFM)] — _Related forecasting foundation model, not a downscaling result. Aurora-derived 3D Swin U-Net with per-variable tokenization, multi-resolution tokenizers, learnable NaN tokens / masked training, axial attention, and AdaLN ensembles. Experiments span dense ERA5/CMIP6 plus sparse MODIS and stations. Year only: the manuscript heading says 20 Apr 2026 and indexed metadata says 5 May 2026. Cited repository and weights were not inspected._ 中文要点：用逐变量、多分辨率编码及缺测掩码把网格、卫星和站点数据纳入同一骨干；适合作为异构输入融合设计参考，而非已有降尺度效果证明。
+- **Any2Any: Unified Arbitrary Modality Translation for Remote Sensing** — Chen et al. (2026) [[ICML](https://icml.cc/virtual/2026/poster/66068)] [[arXiv](https://arxiv.org/abs/2603.04114)] [[Code](https://github.com/MiliLab/Any2Any)] — _Related modality translation, not a weather-downscaling benchmark. Geometrically aligned shared latent space, anchored latent regression, a shared diffusion backbone, and target-specific residual adapters; RST-1M covers five paired modalities, 14 seen tasks, and zero-shot unseen pairs. ICML 2026 poster (8 Jul); preprint day not checked. Official conference page used (not the PMLR homepage). Cited code was not independently audited._ 中文要点：共享对齐潜空间配合目标模态残差适配器支持任意模态转换；可借鉴跨模态接口，但不能等同于已验证的天气降尺度。
+- **Geospatial Foundation Embeddings as Transferable Catchment Descriptors** — Liu, J., Shen, C., Yang, Y., Ji, H., Lawson, K. & Kraabel, N. (2026) [[DOI](https://doi.org/10.1029/2026GL122814)] — _Related rainfall–runoff transfer, not weather downscaling. Geophysical Research Letters 53, e2026GL122814. Indexed abstract: AlphaEarth and StefaLand embeddings as catchment descriptors; on 531 CAMELS temporal-validation basins AlphaEarth alone has median NSE 0.779 vs 0.781 for attributes; embeddings plus attributes raise global ungauged-basin median NSE from 0.683 to 0.720 across 3,434 basins. **Verification:** identity and the indexed abstract are corroborated; the publisher full text was not read (DOI timed out, publisher page returned 400). Not fully primary-page verified. An indexed archive [10.5281/zenodo.19157884](https://doi.org/10.5281/zenodo.19157884) was not fetched, so code and data availability are not claimed. Shen’s given name is not expanded._ 中文要点：地球空间嵌入可补充流域静态属性、改善无资料流域径流迁移；这是水文迁移证据，不是直接的气象降尺度验证。
 
 ## Remote Sensing Spatial Downscaling / 遥感空间降尺度
 
@@ -147,7 +168,7 @@ Curated from Milan Janosov’s [10(+2) Papers & Resources on Spatial Downscaling
 
 ## Libraries & Toolkits / 工具库
 
-- **[Earth2Studio](https://github.com/NVIDIA/earth2studio)** — AI weather/climate workflows (includes CorrDiff)
+- **[Earth2Studio](https://github.com/NVIDIA/earth2studio)** — same NVIDIA toolkit as the Earth-2 section (not a second project): composable inference API across models, data sources, and outputs, including CorrDiff downscaling. [Docs](https://nvidia.github.io/earth2studio/). Release after 0.20.0 is a breaking 1.0.0. 中文要点：工具库，不是新论文。
 - **[PhysicsNeMo](https://github.com/NVIDIA/physicsnemo)** — NVIDIA physics-ML framework (CorrDiff / regional diffusion examples)
 - **[scikit-downscale](https://github.com/pangeo-data/scikit-downscale)** — statistical downscaling
 - **[ClimateDiffuse](https://github.com/robbiewatt1/ClimateDiffuse)** — diffusion climate downscaling
@@ -161,7 +182,10 @@ Selected verified entries (also mirrored in `data/papers.json`):
 - 2026 — PrecipCorrDiff (IMD CorrDiff-style) [[arXiv](https://arxiv.org/abs/2610.19994)]
 - 2026 — CPMGEM-hourly video-diffusion precip [[arXiv](https://arxiv.org/abs/2610.26145)]
 - 2026 — Multivariate monthly→daily diffusion [[arXiv](https://arxiv.org/abs/2610.19885)]
-- 2026 — Foundation model–conditioned precip diffusion [[arXiv](https://arxiv.org/abs/2608.25858)]
+- 2026 — Earth observation embeddings as subgrid descriptors (direct station downscaling) [[arXiv](https://arxiv.org/abs/2608.12271)] [[Code](https://github.com/pedro15sousa/tessera-downscaling)]
+- 2026 — Foundation model–conditioned precip diffusion (direct; no code URL) [[arXiv](https://arxiv.org/abs/2608.25858)]
+- 2026 — ESFM heterogeneous-input forecasting (related, not a downscaler) [[arXiv](https://arxiv.org/abs/2605.00850)]
+- 2026 — Any2Any remote-sensing modality translation (related; ICML poster, not PMLR) [[ICML](https://icml.cc/virtual/2026/poster/66068)] [[arXiv](https://arxiv.org/abs/2603.04114)]
 - 2026 — Flow matching convective-scale precip [[arXiv](https://arxiv.org/abs/2606.00281)] [[Code](https://github.com/mo-tomaswetherell/mo-flow-sg)]
 - 2026 — SwAIther-Precip (AIFS→km Switzerland) [[arXiv](https://arxiv.org/abs/2605.16163)]
 - 2025 — Probabilistic U-Net climate downscaling [[arXiv](https://arxiv.org/abs/2511.03197)] [[Code](https://github.com/MaryamAlipourH/prob-unet-climate-downscaling)]
