@@ -4,7 +4,7 @@
 
 > 仅收录已核验链接的论文、代码与工具；禁止编造 arXiv ID、作者或年份。
 
-**Last updated:** 2026-11-05 (Asia/Shanghai) · Maintainer: [lihuirui](https://github.com/lihuirui)
+**Last updated:** 2026-11-07 (Asia/Shanghai) · Maintainer: [lihuirui](https://github.com/lihuirui)
 
 **Stats:** see [`data/papers.json`](data/papers.json) for structured DL / recent entries.
 
@@ -64,6 +64,8 @@
 - **Earth2Studio** — NVIDIA open framework for AI weather/climate workflows; includes CorrDiff diagnostics models [[GitHub](https://github.com/NVIDIA/earth2studio)] [[CorrDiff source](https://github.com/NVIDIA/earth2studio/blob/main/earth2studio/models/dx/corrdiff.py)]
 - **CorrDiff NIM / API overview** — production-oriented CorrDiff downscaling service docs [[Docs](https://docs.nvidia.com/nim/earth-2/corrdiff/latest/overview.html.md)]
 - **CorrDiff US (GEFS→HRRR)** — CONUS generative downscaling model card [[API ref](https://docs.api.nvidia.com/nim/reference/nvidia-corrdiff)]
+- **PrecipCorrDiff** — Kumar, Chattopadhyay, Bachhav et al. (2026) [[arXiv](https://arxiv.org/abs/2610.19994)] — _CorrDiff-style residual diffusion for IMD precipitation 0.25°→0.0625°; improves extremes & spatial bias vs SRGAN / original CorrDiff._
+- **CorrFlow (residual flow matching)** — SIMO Group (2026) [[Code](https://github.com/SIMOGroup/CorrFlow)] — _Keeps CorrDiff two-stage residual mean+corrector; replaces diffusion corrector with conditional flow matching (1 Euler step); ERA5→ERA5-Land precip (SE Asia). arXiv ID not verified yet._
 
 ### Diffusion & Generative / 扩散与生成模型
 
@@ -72,6 +74,12 @@
 - **Debias Coarsely, Sample Conditionally (OT + diffusion)** — Wan et al. (2023) [[arXiv](https://arxiv.org/abs/2305.15618)] — _Optimal transport + probabilistic diffusion for statistical downscaling._
 - **STVD — Precipitation Downscaling with Spatiotemporal Video Diffusion** — (NeurIPS 2024) [[Code](https://github.com/mandt-lab/STVD)] — _Spatiotemporal video diffusion for precip downscaling._
 - **WassDiff** — generative precip downscaling focused on extremes [[GitHub](https://github.com/Way-Yuhao/WassDiff)]
+- **PrecipCorrDiff** — see Earth-2 section [[arXiv](https://arxiv.org/abs/2610.19994)]
+- **Foundation model–conditioned precip diffusion** — Ribeiro et al. (2026) [[arXiv](https://arxiv.org/abs/2608.25858)] — _Concat vs cross-attn vs frozen Prithvi WxC encoder for daily precip DDPM (Colorado River Basin)._
+- **CPMGEM-hourly (video diffusion)** — Addison, Kendon & Watson (2026) [[arXiv](https://arxiv.org/abs/2610.26145)] — _60 km daily predictors → 8.8 km hourly precip emulating Met Office CPM; flood extremes._
+- **Multivariate monthly→daily spatio-temporal diffusion** — Huang et al. (2026) [[arXiv](https://arxiv.org/abs/2610.19885)] — _Conditional guidance: monthly 1° T+precip → daily 0.25° without retraining._
+- **Flow matching for convective-scale precip** — Wetherell (2026) [[arXiv](https://arxiv.org/abs/2606.00281)] [[Code](https://github.com/mo-tomaswetherell/mo-flow-sg)] — _Conditional flow matching downscaling (mo-flow-sg)._
+- **CorrFlow** — residual flow-matching corrector on CorrDiff stack [[Code](https://github.com/SIMOGroup/CorrFlow)]
 
 ### GAN / CNN / U-Net
 
@@ -121,6 +129,9 @@ Curated from Milan Janosov’s [10(+2) Papers & Resources on Spatial Downscaling
 - **GPM-Downscaling** — ML methods for satellite precipitation downscaling [[GitHub](https://github.com/XiaogangHe/GPM-Downscaling)]
 - **RainFARM** — stochastic precip downscaling (R / Julia) [[rainfarmr](https://github.com/jhardenberg/rainfarmr)] [[RainFARM.jl](https://github.com/jhardenberg/RainFARM.jl)]
 - **TopoPyScale** — hillslope-scale climate downscaling [[GitHub](https://github.com/ArcticSnow/TopoPyScale)]
+- **SwAIther-Precip** — Assouline et al. (2026) [[arXiv](https://arxiv.org/abs/2605.16163)] — _Lead-time-aware U-Net bias correction + diffusion SR: AIFS → ~km precip over Switzerland (CombiPrecip); CRPS −48% vs raw AIFS._
+- **CPMGEM-hourly** — Addison et al. (2026) [[arXiv](https://arxiv.org/abs/2610.26145)] — _Hourly km-scale precip video-diffusion emulator for flood/hydro extremes (UK CPM)._
+- **PrecipCorrDiff (IMD)** — Kumar et al. (2026) [[arXiv](https://arxiv.org/abs/2610.19994)] — _High-res IMD gridded precip for hydro/climate applications (India)._
 
 > Hydrology uses often target precip intensity/extremes, catchment forcing, and flood-relevant fields; prefer methods that preserve intermittency and heavy tails.
 
@@ -147,6 +158,12 @@ Curated from Milan Janosov’s [10(+2) Papers & Resources on Spatial Downscaling
 
 Selected verified entries (also mirrored in `data/papers.json`):
 
+- 2026 — PrecipCorrDiff (IMD CorrDiff-style) [[arXiv](https://arxiv.org/abs/2610.19994)]
+- 2026 — CPMGEM-hourly video-diffusion precip [[arXiv](https://arxiv.org/abs/2610.26145)]
+- 2026 — Multivariate monthly→daily diffusion [[arXiv](https://arxiv.org/abs/2610.19885)]
+- 2026 — Foundation model–conditioned precip diffusion [[arXiv](https://arxiv.org/abs/2608.25858)]
+- 2026 — Flow matching convective-scale precip [[arXiv](https://arxiv.org/abs/2606.00281)] [[Code](https://github.com/mo-tomaswetherell/mo-flow-sg)]
+- 2026 — SwAIther-Precip (AIFS→km Switzerland) [[arXiv](https://arxiv.org/abs/2605.16163)]
 - 2025 — Probabilistic U-Net climate downscaling [[arXiv](https://arxiv.org/abs/2511.03197)] [[Code](https://github.com/MaryamAlipourH/prob-unet-climate-downscaling)]
 - 2025 — DL & foundation models for weather (survey) [[arXiv](https://arxiv.org/abs/2501.06907)]
 - 2024 — DL suitability for GCM projection downscaling [[arXiv](https://arxiv.org/abs/2411.05850)]

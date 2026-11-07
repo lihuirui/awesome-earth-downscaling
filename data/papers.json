@@ -439,5 +439,118 @@
     "venue": "Q. J. R. Meteorol. Soc.",
     "note": "Fair CRPS used as training loss for the ensemble downscaler.",
     "source": "hf-blog-emmascharfmann-2026"
+  },
+  {
+    "title": "PrecipCorrDiff: A Deep Learning Framework for Generating 0.0625° High-Resolution IMD Gridded Precipitation Data",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2610.19994",
+    "code_url": "",
+    "tags": [
+      "CorrDiff",
+      "diffusion",
+      "precipitation",
+      "IMD",
+      "India",
+      "extremes"
+    ],
+    "venue": "arXiv",
+    "note": "CorrDiff-style residual diffusion for IMD precip 0.25°→0.0625°; beats SRGAN & original CorrDiff on extremes/spatial bias.",
+    "source": "routine-2026-11-07"
+  },
+  {
+    "title": "SwAIther-Precip: Lead-Time-Aware Bias Correction Enables Kilometer-Scale Downscaling of Global AI Precipitation Forecasts over Switzerland",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2605.16163",
+    "code_url": "",
+    "tags": [
+      "AIFS",
+      "diffusion",
+      "precipitation",
+      "U-Net",
+      "Switzerland",
+      "bias-correction"
+    ],
+    "venue": "arXiv",
+    "note": "Lead-time-aware U-Net bias correction + diffusion SR: AIFS → ~1 km precip over Switzerland; CRPS −48% vs raw AIFS.",
+    "source": "routine-2026-11-07"
+  },
+  {
+    "title": "Spatio-temporal precipitation downscaling at hourly resolution based on km-scale regional simulations",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2610.26145",
+    "code_url": "",
+    "tags": [
+      "video-diffusion",
+      "precipitation",
+      "hourly",
+      "UK",
+      "CPM",
+      "flood"
+    ],
+    "venue": "arXiv",
+    "note": "CPMGEM-hourly: video diffusion 60 km daily → 8.8 km hourly precip emulating Met Office CPM; flood extremes use case.",
+    "source": "routine-2026-11-07"
+  },
+  {
+    "title": "Precipitation Downscaling Using Foundation Model-Conditioned Diffusion",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2608.25858",
+    "code_url": "",
+    "tags": [
+      "diffusion",
+      "foundation-model",
+      "Prithvi-WxC",
+      "precipitation",
+      "Colorado"
+    ],
+    "venue": "arXiv",
+    "note": "Compares concat vs cross-attn vs frozen Prithvi WxC encoder conditioning for daily precip DDPM (Colorado River Basin).",
+    "source": "routine-2026-11-07"
+  },
+  {
+    "title": "Flow Matching for Convective-Scale Precipitation Downscaling",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.00281",
+    "code_url": "https://github.com/mo-tomaswetherell/mo-flow-sg",
+    "tags": [
+      "flow-matching",
+      "precipitation",
+      "convective-scale"
+    ],
+    "venue": "arXiv",
+    "note": "Conditional flow matching for convective-scale precip downscaling (Met Office / mo-flow-sg).",
+    "source": "routine-2026-11-07"
+  },
+  {
+    "title": "One-step residual flow matching for probabilistic precipitation downscaling (CorrFlow)",
+    "year": 2026,
+    "url": "https://github.com/SIMOGroup/CorrFlow",
+    "code_url": "https://github.com/SIMOGroup/CorrFlow",
+    "tags": [
+      "CorrFlow",
+      "CorrDiff",
+      "flow-matching",
+      "precipitation",
+      "ERA5-Land"
+    ],
+    "venue": "GitHub",
+    "note": "CorrDiff-style two-stage residual + flow-matching corrector (1 Euler step); ERA5→ERA5-Land SE Asia precip. No arXiv ID verified yet.",
+    "source": "routine-2026-11-07"
+  },
+  {
+    "title": "Generative modelling for multivariate spatio-temporal downscaling of monthly climate fields",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2610.19885",
+    "code_url": "",
+    "tags": [
+      "diffusion",
+      "spatio-temporal",
+      "temperature",
+      "precipitation",
+      "monthly-to-daily"
+    ],
+    "venue": "arXiv",
+    "note": "Diffusion with conditional guidance: monthly 1° T+precip → daily 0.25° without retraining the base model.",
+    "source": "routine-2026-11-07"
   }
 ]

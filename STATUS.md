@@ -1,6 +1,6 @@
 # STATUS — awesome-earth-downscaling
 
-**Updated:** 2026-11-05 (Asia/Shanghai)
+**Updated:** 2026-11-07 (Asia/Shanghai)
 
 ## First-fill method
 - Gemini/agy capacity was saturated; first content authored via lightweight WebSearch + WebFetch + `gh` repo search (quota-conscious).
@@ -15,9 +15,22 @@
   - Add more hydro runoff / flood-oriented DL downscaling papers with verified code
   - Link official SDSM / ClimDown paper DOIs in classical section
   - Optional: bibtex export from papers.json
+  - Track arXiv ID for SIMOGroup/CorrFlow when published
 
 ## Update routine
 Every ~3 days: search new arXiv/GitHub hits for weather/climate/hydro downscaling + Earth-2/CorrDiff; merge verified entries into README + data/papers.json; push if changed.
+
+## 2026-11-07 — Incremental sweep (post 2026-11-05)
+Added **7** verified entries (all abs/GitHub HTTP 200):
+- PrecipCorrDiff [[arXiv:2610.19994](https://arxiv.org/abs/2610.19994)] — CorrDiff-style IMD precip
+- SwAIther-Precip [[arXiv:2605.16163](https://arxiv.org/abs/2605.16163)] — AIFS→km Switzerland precip
+- CPMGEM-hourly [[arXiv:2610.26145](https://arxiv.org/abs/2610.26145)] — video diffusion hourly precip
+- Foundation-conditioned precip diffusion [[arXiv:2608.25858](https://arxiv.org/abs/2608.25858)] — Prithvi WxC
+- Flow matching convective-scale precip [[arXiv:2606.00281](https://arxiv.org/abs/2606.00281)] + [mo-flow-sg](https://github.com/mo-tomaswetherell/mo-flow-sg)
+- CorrFlow residual flow matching [[SIMOGroup/CorrFlow](https://github.com/SIMOGroup/CorrFlow)] (no arXiv yet)
+- Multivariate monthly→daily diffusion [[arXiv:2610.19885](https://arxiv.org/abs/2610.19885)]
+
+Method: lightweight WebSearch + arXiv/GitHub HTTP checks (agy not used this run).
 
 ## 2026-11-05 — Milan Janosov RS downscaling list
 Imported all **12/12** spatial-downscaling items from [Milan’s Substack](https://milanjanosov.substack.com/p/10-papers-and-resources-on-spatial) / [X](https://x.com/milan_janosov/status/2112440683835310405) into README section *Remote Sensing Spatial Downscaling* +  (DOI/arXiv/GitHub verified; LinkedIn shortlinks resolved via titles).
