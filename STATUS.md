@@ -20,6 +20,25 @@
 ## Update routine
 Every ~3 days: search new arXiv/GitHub hits for weather/climate/hydro downscaling + Earth-2/CorrDiff; merge verified entries into README + data/papers.json; push if changed.
 
+## 2026-11-07 — Seven requested sources (direct vs related)
+
+Collected as **5 papers + 1 NVIDIA official example + 1 toolkit**, not seven papers. Used the attached verification brief only; no extra literature sweep. Date: 2026-11-07 (Asia/Shanghai).
+
+**Direct weather downscaling**
+- Enriched in place: **Precipitation Downscaling Using Foundation Model-Conditioned Diffusion** [[arXiv:2608.25858](https://arxiv.org/abs/2608.25858)] (README + `data/papers.json`). `code_url` stays empty; no checkpoint was inferred.
+- Added: **Earth observation embeddings are effective subgrid descriptors for probabilistic weather downscaling** [[arXiv:2608.12271](https://arxiv.org/abs/2608.12271)]. 10 m is the Tessera embedding resolution, not the weather grid. Cited code was not inspected.
+
+**Enriched, not duplicated**
+- **NVIDIA Earth2Studio** — updated the existing Earth-2 entry and the Libraries cross-listing (docs, unified API, breaking 1.0.0 note, toolkit-not-paper). No third README listing. Added one `papers.json` record because the toolkit was absent there; `year` is `null` (no publication date established).
+
+**Related enabling work** (new subsection; not labeled as downscaling results)
+- **MoWE** — PhysicsNeMo documentation example for forecast fusion [[docs](https://docs.nvidia.com/physicsnemo/latest/physicsnemo/examples/weather/mixture_of_experts/readme.html)]. Not a paper; no checkpoint invented.
+- **ESFM** — heterogeneous-input forecasting [[arXiv:2605.00850](https://arxiv.org/abs/2605.00850)]. Year only (20 Apr vs 5 May 2026 headings differ).
+- **Any2Any** — modality translation. Official page is the [ICML 2026 poster](https://icml.cc/virtual/2026/poster/66068), not the PMLR homepage; arXiv [2603.04114](https://arxiv.org/abs/2603.04114).
+- **Geospatial Foundation Embeddings as Transferable Catchment Descriptors** — rainfall–runoff transfer [[DOI](https://doi.org/10.1029/2026GL122814)]. Identity and indexed abstract corroborated; publisher body not read (DOI timeout, publisher HTTP 400). **Not fully primary-page verified.** Indexed Zenodo `10.5281/zenodo.19157884` was not fetched, so code/data availability is not claimed. Author line keeps Shen, C. (given name not established).
+
+Cited code URLs for ESFM, Any2Any, and the Tessera downscaling repo are recorded as citations only.
+
 ## 2026-11-07 — Incremental sweep (post 2026-11-05)
 Added **7** verified entries (all abs/GitHub HTTP 200):
 - PrecipCorrDiff [[arXiv:2610.19994](https://arxiv.org/abs/2610.19994)] — CorrDiff-style IMD precip

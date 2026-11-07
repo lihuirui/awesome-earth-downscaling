@@ -501,10 +501,12 @@
       "foundation-model",
       "Prithvi-WxC",
       "precipitation",
-      "Colorado"
+      "Colorado",
+      "direct-downscaling",
+      "ERA5-Land"
     ],
     "venue": "arXiv",
-    "note": "Compares concat vs cross-attn vs frozen Prithvi WxC encoder conditioning for daily precip DDPM (Colorado River Basin).",
+    "note": "Direct precip downscaling (Ribeiro et al.). Colorado River Basin daily precipitation: ERA5 predictors aggregated to 1°, ERA5-Land 0.1° target (not gauge truth). Concatenation wins pointwise CRPS/MSE; learned-convolution and frozen Prithvi WxC encoder cross-attention improve distribution/extremes; the pretrained encoder is more data-efficient. Single basin and three test years limit generalization and tail statistics. No implementation or checkpoint URL in the inspected paper. 中文要点：冻结天气基础模型编码器，通过交叉注意力约束降水扩散生成；重点比较像素误差与极端/频谱保真度取舍，不能声称基础模型全面胜出。",
     "source": "routine-2026-11-07"
   },
   {
@@ -552,5 +554,104 @@
     "venue": "arXiv",
     "note": "Diffusion with conditional guidance: monthly 1° T+precip → daily 0.25° without retraining the base model.",
     "source": "routine-2026-11-07"
+  },
+  {
+    "title": "NVIDIA Earth2Studio",
+    "year": null,
+    "url": "https://github.com/NVIDIA/earth2studio",
+    "code_url": "https://github.com/NVIDIA/earth2studio",
+    "tags": [
+      "toolkit",
+      "Earth-2",
+      "NVIDIA",
+      "CorrDiff",
+      "inference"
+    ],
+    "venue": "GitHub",
+    "note": "Toolkit, not a paper. Composable Python AI inference pipeline with a unified API across models, data sources, and outputs, including CorrDiff downscaling. Docs: https://nvidia.github.io/earth2studio/. No single author list or publication date (year left null). README warns the release after 0.20.0 is a breaking 1.0.0. 中文要点：统一模型、数据源和输出接口，可复用组合式预报—降尺度流程；它是工具库，不是新论文。",
+    "source": "user-request-2026-11-07"
+  },
+  {
+    "title": "Mixture of Weather Experts (MoWE) for Weather Forecasting",
+    "year": null,
+    "url": "https://docs.nvidia.com/physicsnemo/latest/physicsnemo/examples/weather/mixture_of_experts/readme.html",
+    "code_url": "https://github.com/NVIDIA/physicsnemo",
+    "tags": [
+      "example",
+      "MoWE",
+      "forecast-fusion",
+      "PhysicsNeMo",
+      "NVIDIA",
+      "related"
+    ],
+    "venue": "NVIDIA PhysicsNeMo docs",
+    "note": "Official documentation example, not a standalone paper. NVIDIA PhysicsNeMo; individual authors and release date are not shown (year left null). Gating network combines Aurora, Pangu-Weather, and FCN3 with learned weights and an optional bias; DiT conditions on lead time and, for the probabilistic variant, noise. Deterministic and probabilistic variants; CRPS training recipe; Earth2Studio generates expert training forecasts. Multi-TB storage; experimental DiT design. Framework repo only — no checkpoint invented. Related forecast fusion, not demonstrated weather downscaling. 中文要点：多天气模型输出经门控网络动态加权，含偏差项与概率集合版本；可借鉴专家融合和提前量条件化，但是预报融合，不是来源证明的降尺度对照。",
+    "source": "user-request-2026-11-07"
+  },
+  {
+    "title": "Earth System Foundation Model (ESFM): A unified framework for heterogeneous data integration and forecasting",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2605.00850",
+    "code_url": "https://github.com/swiss-ai/ESFM",
+    "tags": [
+      "foundation-model",
+      "forecasting",
+      "heterogeneous-input",
+      "ESFM",
+      "related"
+    ],
+    "venue": "arXiv",
+    "note": "Related forecasting foundation model, not a downscaling result. Ozdemir, Cheng, Mohebi, Lehmann, Adamov, Zhang, Trentini, Grund, Fuhrer, Hoefler, Mishra, Schemm, Soja & Salzmann. Year only: manuscript heading 20 Apr 2026 vs indexed 5 May 2026. Aurora-derived 3D Swin U-Net; per-variable tokenization, multi-resolution tokenizers, learnable NaN tokens/masked training, axial attention, and AdaLN ensembles. Dense ERA5/CMIP6 plus sparse MODIS and stations. code_url is cited by the paper; repository and weights were not inspected. 中文要点：用逐变量、多分辨率编码及缺测掩码把网格、卫星和站点数据纳入同一骨干；适合作为异构输入融合设计参考，而非已有降尺度效果证明。",
+    "source": "user-request-2026-11-07"
+  },
+  {
+    "title": "Any2Any: Unified Arbitrary Modality Translation for Remote Sensing",
+    "year": 2026,
+    "url": "https://icml.cc/virtual/2026/poster/66068",
+    "code_url": "https://github.com/MiliLab/Any2Any",
+    "tags": [
+      "modality-translation",
+      "remote-sensing",
+      "ICML",
+      "Any2Any",
+      "related"
+    ],
+    "venue": "ICML 2026",
+    "note": "Related remote-sensing modality translation, not a weather-downscaling benchmark. Conference author order: Haoyang Chen, Jing Zhang, Di Wang, Hebaixu Wang, Shiqin Wang, Pohsun Huang, Jiayuan Li, Haonan Guo, Zheng Wang, Bo Du. Official page is the ICML 2026 poster (8 Jul), not the PMLR homepage. Preprint: https://arxiv.org/abs/2603.04114 (preprint day not checked). Shared aligned latent space, anchored latent regression, shared diffusion backbone, target-specific residual adapters; RST-1M five-modality pairs; 14 seen tasks and zero-shot unseen pairs. code_url is linked by the conference page and was not independently audited. 中文要点：共享对齐潜空间配合目标模态残差适配器支持任意模态转换；可借鉴跨模态接口，但不能等同于已验证的天气降尺度。",
+    "source": "user-request-2026-11-07"
+  },
+  {
+    "title": "Earth observation embeddings are effective subgrid descriptors for probabilistic weather downscaling",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2608.12271",
+    "code_url": "https://github.com/pedro15sousa/tessera-downscaling",
+    "tags": [
+      "direct-downscaling",
+      "embeddings",
+      "probabilistic",
+      "stations",
+      "Tessera",
+      "ConvCNP"
+    ],
+    "venue": "arXiv",
+    "note": "Direct probabilistic weather downscaling. Sousa, Tebbutt, Jaffer, Young, Madhavapeddy & Turner. v2 title uses “subgrid”; v1 uses “sub-grid”. Year only (indexed v1 submission 12 Aug 2026 UTC). ~25 km ERA5/Aurora fields to arbitrary stations with ConvCNP; frozen 10 m Tessera patches (64×64) compressed to 16 dimensions by a VAE. Five regions; stations held out in space and time. Reported CRPS gains vs topography-only, 11.5% T2m and 6.2% 10 m wind, are station-prediction scores, not 10 m weather grids. Marginal uncertainty only. code_url is cited by the paper and was not independently inspected. 中文要点：将遥感基础模型嵌入作为亚网格地表描述符，接入站点概率降尺度；区分10米地表嵌入与天气输出分辨率，评估时做空间与时间双重留出。",
+    "source": "user-request-2026-11-07"
+  },
+  {
+    "title": "Geospatial Foundation Embeddings as Transferable Catchment Descriptors",
+    "year": 2026,
+    "url": "https://doi.org/10.1029/2026GL122814",
+    "code_url": "",
+    "tags": [
+      "catchment",
+      "embeddings",
+      "rainfall-runoff",
+      "hydrology",
+      "related",
+      "qualified-verification"
+    ],
+    "venue": "Geophysical Research Letters",
+    "note": "Related rainfall-runoff transfer, not weather downscaling. Safe bibliography: Liu, J., Shen, C., Yang, Y., Ji, H., Lawson, K. & Kraabel, N. GRL 53, e2026GL122814 (2026); exact publisher date not read. Publisher page https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2026GL122814 was not read (DOI fetch timed out; publisher fetch returned 400). Identity and indexed abstract corroborated, not fully primary-page verified. Indexed abstract: AlphaEarth and StefaLand embeddings as catchment descriptors; 531 CAMELS temporal-validation basins, AlphaEarth alone median NSE 0.779 vs attributes 0.781; embeddings plus attributes improve global ungauged-basin median NSE from 0.683 to 0.720 across 3,434 basins. Indexed archive https://doi.org/10.5281/zenodo.19157884 was not fetched, so code_url is empty and code/data availability is not claimed. 中文要点：地球空间嵌入可补充流域静态属性、改善无资料流域径流迁移；这是水文迁移证据，不是直接的气象降尺度验证。",
+    "source": "user-request-2026-11-07"
   }
 ]
