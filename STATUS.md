@@ -1,6 +1,6 @@
 # STATUS — awesome-earth-downscaling
 
-**Updated:** 2026-11-07 (Asia/Shanghai)
+**Updated:** 2026-11-10 (Asia/Shanghai)
 
 ## First-fill method
 - Gemini/agy capacity was saturated; first content authored via lightweight WebSearch + WebFetch + `gh` repo search (quota-conscious).
@@ -19,6 +19,16 @@
 
 ## Update routine
 Every ~3 days: search new arXiv/GitHub hits for weather/climate/hydro downscaling + Earth-2/CorrDiff; merge verified entries into README + data/papers.json; push if changed.
+
+## 2026-11-10 — Incremental sweep (post 2026-11-07)
+Added **4** verified late-Oct 2026 papers (missed in the 11-07 sweep; all abs/GitHub/DOI HTTP 200) and official Earth2Studio CorrDiff model links:
+- Operator-Aware Posterior Sampling [[arXiv:2610.39592](https://arxiv.org/abs/2610.39592)] + [code](https://github.com/CarloSaccardi/operator-aware-weather-downscaling)
+- CD-FFM likelihood functional flow matching [[arXiv:2610.33482](https://arxiv.org/abs/2610.33482)] + [code](https://github.com/Holmes-Alan/CD-FFM)
+- Spherical Physics-informed Neural Operator [[arXiv:2610.24708](https://arxiv.org/abs/2610.24708)] [[DOI](https://doi.org/10.24963/ijcai.2026/734)] (IJCAI 2026)
+- ERA5→IMERG daily precip over West Africa [[arXiv:2610.16816](https://arxiv.org/abs/2610.16816)]
+- Earth2Studio v0.20.0 (2026-10-29): [CorrDiffEra5Hrrr](https://nvidia.github.io/earth2studio/main/modules/generated/models/dx/CorrDiffEra5Hrrr/) (distilled ERA5→3 km HRRR) and [CorrDiff CMIP6→ERA5](https://huggingface.co/nvidia/corrdiff-cmip6-era5)
+
+No core weather/hydro downscaling papers with new arXiv IDs announced 2026-11-07–11-10 were found (2611.03925 is a TC dataset, not a downscaling method). Method: lightweight arXiv API + WebSearch + HTTP checks (agy not used this run).
 
 ## 2026-11-07 — Incremental sweep (post 2026-11-05)
 Added **7** verified entries (all abs/GitHub HTTP 200):

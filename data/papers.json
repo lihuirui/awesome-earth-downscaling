@@ -552,5 +552,69 @@
     "venue": "arXiv",
     "note": "Diffusion with conditional guidance: monthly 1° T+precip → daily 0.25° without retraining the base model.",
     "source": "routine-2026-11-07"
+  },
+  {
+    "title": "Operator-Aware Posterior Sampling for Multivariate Weather Downscaling",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2610.39592",
+    "code_url": "https://github.com/CarloSaccardi/operator-aware-weather-downscaling",
+    "tags": [
+      "diffusion",
+      "posterior-sampling",
+      "ERA5",
+      "CERRA",
+      "multivariate"
+    ],
+    "venue": "arXiv",
+    "note": "Learned coarse operator + per-channel guidance normalization on a frozen diffusion prior; ERA5→CERRA multivariate downscaling.",
+    "source": "routine-2026-11-10"
+  },
+  {
+    "title": "Climate downscaling with likelihood functional flow matching",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2610.33482",
+    "code_url": "https://github.com/Holmes-Alan/CD-FFM",
+    "tags": [
+      "flow-matching",
+      "CD-FFM",
+      "temperature",
+      "precipitation",
+      "Fennoscandia"
+    ],
+    "venue": "arXiv",
+    "note": "Functional flow matching treats the HR field as a continuous random field queryable at any location/resolution; ERA5→1 km daily T over Fennoscandia, also transfers to precip.",
+    "source": "routine-2026-11-10"
+  },
+  {
+    "title": "Spherical Physics-informed Neural Operator with Multi-scale Coupling for Meteorological Downscaling",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2610.24708",
+    "code_url": "",
+    "tags": [
+      "neural-operator",
+      "physics-informed",
+      "spherical",
+      "IJCAI"
+    ],
+    "venue": "IJCAI 2026",
+    "note": "Spherical Laplacian decomposition + physics constraints for global-to-regional meteorological downscaling; DOI 10.24963/ijcai.2026/734.",
+    "source": "routine-2026-11-10"
+  },
+  {
+    "title": "Statistical Downscaling of Daily Precipitation from ERA5 Atmospheric Fields to IMERG over West Africa",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2610.16816",
+    "code_url": "",
+    "tags": [
+      "U-Net",
+      "GAN",
+      "precipitation",
+      "ERA5",
+      "IMERG",
+      "West-Africa"
+    ],
+    "venue": "arXiv",
+    "note": "U-Net/GAN daily downscaling ERA5 0.25°→IMERG V07 0.1° over West Africa (JJASO 2000–2024); deterministic U-Nets too dry and lose small-scale variance.",
+    "source": "routine-2026-11-10"
   }
 ]
