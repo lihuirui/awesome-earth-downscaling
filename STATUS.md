@@ -1,6 +1,6 @@
 # STATUS — awesome-earth-downscaling
 
-**Updated:** 2026-11-10 (Asia/Shanghai)
+**Updated:** 2026-11-13 (Asia/Shanghai)
 
 ## First-fill method
 - Gemini/agy capacity was saturated; first content authored via lightweight WebSearch + WebFetch + `gh` repo search (quota-conscious).
@@ -15,10 +15,18 @@
   - Add more hydro runoff / flood-oriented DL downscaling papers with verified code
   - Link official SDSM / ClimDown paper DOIs in classical section
   - Optional: bibtex export from papers.json
-  - Track arXiv ID for SIMOGroup/CorrFlow when published
+  - Track arXiv ID for SIMOGroup/CorrFlow when published (repo pushed 2026-11-09; title still has no matching arXiv)
+  - Optional backlog (predate this sweep; not added): CORDEX-ML-Bench [[arXiv:2606.29172](https://arxiv.org/abs/2606.29172)]; China 3 km CorrDiff [[arXiv:2512.05377](https://arxiv.org/abs/2512.05377)]; analog-initialized latent transport km-scale downscaling [[arXiv:2610.03736](https://arxiv.org/abs/2610.03736)]
 
 ## Update routine
 Every ~3 days: search new arXiv/GitHub hits for weather/climate/hydro downscaling + Earth-2/CorrDiff; merge verified entries into README + data/papers.json; push if changed.
+
+## 2026-11-13 — Incremental sweep (post 2026-11-10)
+Added **2** verified papers (all abs/GitHub HTTP 200):
+- PROLA [[arXiv:2611.11318](https://arxiv.org/abs/2611.11318)] [[NeurIPS 2026]] + [code](https://github.com/yms020615/PROLA) — predictive spatiotemporal weather downscaling (PEFT)
+- Spatially varying quantile downscaling of Spain summer Tmax [[arXiv:2611.12677](https://arxiv.org/abs/2611.12677)]
+
+No new Earth2Studio release after v0.20.0; CorrFlow still has no verified arXiv ID. Method: lightweight arXiv API + GitHub search + HTTP checks (agy not used this run).
 
 ## 2026-11-10 — Incremental sweep (post 2026-11-07)
 Added **4** verified late-Oct 2026 papers (missed in the 11-07 sweep; all abs/GitHub/DOI HTTP 200) and official Earth2Studio CorrDiff model links:

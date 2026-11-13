@@ -616,5 +616,40 @@
     "venue": "arXiv",
     "note": "U-Net/GAN daily downscaling ERA5 0.25°→IMERG V07 0.1° over West Africa (JJASO 2000–2024); deterministic U-Nets too dry and lose small-scale variance.",
     "source": "routine-2026-11-10"
+  },
+  {
+    "title": "PROLA: Principal-Orthogonal Low-rank Adaptation for Predictive Spatiotemporal Weather Downscaling",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.11318",
+    "code_url": "https://github.com/yms020615/PROLA",
+    "tags": [
+      "PEFT",
+      "LoRA",
+      "PSWD",
+      "ERA5",
+      "CERRA",
+      "precipitation",
+      "Aurora"
+    ],
+    "venue": "NeurIPS 2026",
+    "note": "PEFT (principal + orthogonal low-rank) adaptation of a pretrained weather backbone for Predictive Spatiotemporal Weather Downscaling; also ERA5→CERRA and regional precip tasks.",
+    "source": "routine-2026-11-13"
+  },
+  {
+    "title": "Spatially varying quantile downscaling of summer temperature from atmospheric circulation and long-term trends over peninsular Spain",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.12677",
+    "code_url": "",
+    "tags": [
+      "quantile",
+      "Bayesian",
+      "temperature",
+      "Spain",
+      "ERA5",
+      "statistical"
+    ],
+    "venue": "arXiv",
+    "note": "Bayesian spatially varying quantile regression for summer Tmax (0.50 and 0.95) at 40 stations over peninsular Spain (1960–2023), using ERA5 geopotential and long-term trends.",
+    "source": "routine-2026-11-13"
   }
 ]

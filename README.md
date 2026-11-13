@@ -4,7 +4,7 @@
 
 > 仅收录已核验链接的论文、代码与工具；禁止编造 arXiv ID、作者或年份。
 
-**Last updated:** 2026-11-10 (Asia/Shanghai) · Maintainer: [lihuirui](https://github.com/lihuirui)
+**Last updated:** 2026-11-13 (Asia/Shanghai) · Maintainer: [lihuirui](https://github.com/lihuirui)
 
 **Stats:** see [`data/papers.json`](data/papers.json) for structured DL / recent entries.
 
@@ -44,6 +44,7 @@
 - **ClimDown** — PCIC daily climate downscaling library (R) [[GitHub](https://github.com/pacificclimate/ClimDown)]
 - **carbonplan/cmip6-downscaling** — CMIP6 climate downscaling workflows [[GitHub](https://github.com/carbonplan/cmip6-downscaling)]
 - **NEX-GDDP** — NASA Earth Exchange Global Daily Downscaled Projections (CMIP6) — see Thrasher et al. dataset papers / NASA NEX pages
+- **Spatially varying quantile downscaling (Spain Tmax)** — Marcen-Gutierrez & Castillo-Mateo (2026) [[arXiv](https://arxiv.org/abs/2611.12677)] — _Bayesian spatially varying quantile regression for summer daily maximum temperature (0.50 and 0.95 quantiles) at 40 stations over peninsular Spain (1960–2023), using ERA5 geopotential and long-term trends._
 
 > Classic methods also include quantile mapping, SDSM-style regression, analogs, and weather generators (see Maraun & Widmann textbook literature).
 
@@ -99,6 +100,7 @@
 
 - **Fourier Neural Operators for Arbitrary Resolution Climate Data Downscaling** — Yang et al. (2023) [[arXiv](https://arxiv.org/abs/2305.14452)] — _FNO for flexible-resolution climate downscaling._
 - **ORBIT-2** — Exascale Vision Transformer for weather/climate downscaling & forecasting [[GitHub](https://github.com/XiaoWang-Github/ORBIT-2)]
+- **PROLA** — Yoon, Bae, Lee & Kim (2026) [[arXiv](https://arxiv.org/abs/2611.11318)] [[Code](https://github.com/yms020615/PROLA)] *(NeurIPS 2026)* — _Principal-orthogonal low-rank adaptation (PEFT) of a pretrained weather backbone for Predictive Spatiotemporal Weather Downscaling (PSWD); also reports ERA5→CERRA and regional precipitation tasks (~3.92M trainable parameters in the main setting)._
 - **Spherical Physics-informed Neural Operator** — Ye et al. (2026) [[arXiv](https://arxiv.org/abs/2610.24708)] [[DOI](https://doi.org/10.24963/ijcai.2026/734)] *(IJCAI 2026)* — _Spherical Laplacian decomposition plus physics constraints for global-to-regional meteorological downscaling; reports zero-shot queries at arbitrary locations._
 
 ### Physics-informed & Hybrid
@@ -165,6 +167,8 @@ Curated from Milan Janosov’s [10(+2) Papers & Resources on Spatial Downscaling
 
 Selected verified entries (also mirrored in `data/papers.json`):
 
+- 2026 — PROLA (predictive spatiotemporal weather downscaling) [[arXiv](https://arxiv.org/abs/2611.11318)] [[Code](https://github.com/yms020615/PROLA)] *(NeurIPS 2026)*
+- 2026 — Spatially varying quantile downscaling of Spain summer Tmax [[arXiv](https://arxiv.org/abs/2611.12677)]
 - 2026 — Operator-aware posterior sampling (ERA5→CERRA) [[arXiv](https://arxiv.org/abs/2610.39592)] [[Code](https://github.com/CarloSaccardi/operator-aware-weather-downscaling)]
 - 2026 — CD-FFM functional flow matching [[arXiv](https://arxiv.org/abs/2610.33482)] [[Code](https://github.com/Holmes-Alan/CD-FFM)]
 - 2026 — Spherical physics-informed neural operator [[arXiv](https://arxiv.org/abs/2610.24708)]
