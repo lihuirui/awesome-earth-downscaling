@@ -651,5 +651,24 @@
     "venue": "arXiv",
     "note": "Bayesian spatially varying quantile regression for summer Tmax (0.50 and 0.95) at 40 stations over peninsular Spain (1960–2023), using ERA5 geopotential and long-term trends.",
     "source": "routine-2026-11-13"
+  },
+  {
+    "title": "A hybrid machine learning-analog framework for downscaling unprecedented climate extremes",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.15284",
+    "code_url": "",
+    "tags": [
+      "extremes",
+      "analog",
+      "generative",
+      "EnScale",
+      "heatwave",
+      "GCM",
+      "RCM",
+      "Europe"
+    ],
+    "venue": "arXiv",
+    "note": "Hybrid ML-analog downscaling: an EnScale emulator builds a large high-resolution RCM-like library (8,000 summers, 8 GCM-RCM pairs), then analog-matches coarse GCM ensemble-boosted heatwaves over Paris / Western Europe. Uses EnScale (Schillinger et al., arXiv:2509.26258; code https://github.com/m-schillinger/enscale). No separate official code link for this paper.",
+    "source": "routine-2026-11-16"
   }
 ]

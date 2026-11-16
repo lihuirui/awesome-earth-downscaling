@@ -4,7 +4,7 @@
 
 > 仅收录已核验链接的论文、代码与工具；禁止编造 arXiv ID、作者或年份。
 
-**Last updated:** 2026-11-13 (Asia/Shanghai) · Maintainer: [lihuirui](https://github.com/lihuirui)
+**Last updated:** 2026-11-16 (Asia/Shanghai) · Maintainer: [lihuirui](https://github.com/lihuirui)
 
 **Stats:** see [`data/papers.json`](data/papers.json) for structured DL / recent entries.
 
@@ -85,6 +85,7 @@
 - **CorrFlow** — residual flow-matching corrector on CorrDiff stack [[Code](https://github.com/SIMOGroup/CorrFlow)]
 - **Operator-Aware Posterior Sampling** — Saccardi, Saathof, Joseph & Dauwels (2026) [[arXiv](https://arxiv.org/abs/2610.39592)] [[Code](https://github.com/CarloSaccardi/operator-aware-weather-downscaling)] — _Diffusion prior with a learned coarse operator and per-channel guidance normalization; ERA5→CERRA multivariate downscaling without retraining the prior._
 - **CD-FFM (likelihood functional flow matching)** — Liu, Toropainen, Kheder & Boy (2026) [[arXiv](https://arxiv.org/abs/2610.33482)] [[Code](https://github.com/Holmes-Alan/CD-FFM)] — _Treats the HR field as a continuous random field queryable at any location/resolution; ERA5→1 km daily temperature over Fennoscandia, also transfers to precip; reports faster sampling than a CorrDiff-style baseline._
+- **Hybrid ML-analog downscaling of unprecedented climate extremes** — Effenberger, Roemer, Schillinger, Samarin, Fischer & Knutti (2026) [[arXiv](https://arxiv.org/abs/2611.15284)] — _EnScale generative RCM emulation plus analog matching to downscale coarse GCM ensemble-boosted heatwaves (Paris / Western Europe) and sample multi-model storylines. Uses EnScale [[arXiv](https://arxiv.org/abs/2509.26258)] [[Code](https://github.com/m-schillinger/enscale)]; this paper has no separate official code link._
 
 ### GAN / CNN / U-Net
 
@@ -167,6 +168,7 @@ Curated from Milan Janosov’s [10(+2) Papers & Resources on Spatial Downscaling
 
 Selected verified entries (also mirrored in `data/papers.json`):
 
+- 2026 — Hybrid ML-analog downscaling of unprecedented climate extremes [[arXiv](https://arxiv.org/abs/2611.15284)]
 - 2026 — PROLA (predictive spatiotemporal weather downscaling) [[arXiv](https://arxiv.org/abs/2611.11318)] [[Code](https://github.com/yms020615/PROLA)] *(NeurIPS 2026)*
 - 2026 — Spatially varying quantile downscaling of Spain summer Tmax [[arXiv](https://arxiv.org/abs/2611.12677)]
 - 2026 — Operator-aware posterior sampling (ERA5→CERRA) [[arXiv](https://arxiv.org/abs/2610.39592)] [[Code](https://github.com/CarloSaccardi/operator-aware-weather-downscaling)]

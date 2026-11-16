@@ -1,6 +1,6 @@
 # STATUS — awesome-earth-downscaling
 
-**Updated:** 2026-11-13 (Asia/Shanghai)
+**Updated:** 2026-11-16 (Asia/Shanghai)
 
 ## First-fill method
 - Gemini/agy capacity was saturated; first content authored via lightweight WebSearch + WebFetch + `gh` repo search (quota-conscious).
@@ -20,6 +20,12 @@
 
 ## Update routine
 Every ~3 days: search new arXiv/GitHub hits for weather/climate/hydro downscaling + Earth-2/CorrDiff; merge verified entries into README + data/papers.json; push if changed.
+
+## 2026-11-16 — Incremental sweep (post 2026-11-13)
+Added **1** verified paper (abs HTTP 200):
+- Hybrid ML-analog downscaling of unprecedented climate extremes [[arXiv:2611.15284](https://arxiv.org/abs/2611.15284)] — EnScale generative RCM emulation + analog matching for GCM ensemble-boosted heatwaves (Paris / Western Europe). Related EnScale method [[arXiv:2509.26258](https://arxiv.org/abs/2509.26258)] [[code](https://github.com/m-schillinger/enscale)] (HTTP 200) is cited in the note; not added as a separate historical entry this run.
+
+No new Earth2Studio release after v0.20.0; CorrFlow still has no verified arXiv ID. Skipped as out of scope or unverified as a methods paper: MAGIC GRACE DA [[arXiv:2611.15421](https://arxiv.org/abs/2611.15421)]; CARM EO SR risk masks [[arXiv:2611.06151](https://arxiv.org/abs/2611.06151)]; RATSIFT solar temporal downscaling [[arXiv:2611.03738](https://arxiv.org/abs/2611.03738)]; GitHub-only IGARSS 2027 TWS downscaling [granger-prior-tws-downscaling](https://github.com/BOUTAYEBAnasse/granger-prior-tws-downscaling) (no arXiv/DOI yet). Method: lightweight arXiv API + GitHub search + HTTP checks (agy not used this run).
 
 ## 2026-11-13 — Incremental sweep (post 2026-11-10)
 Added **2** verified papers (all abs/GitHub HTTP 200):
