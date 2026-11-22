@@ -670,5 +670,22 @@
     "venue": "arXiv",
     "note": "Hybrid ML-analog downscaling: an EnScale emulator builds a large high-resolution RCM-like library (8,000 summers, 8 GCM-RCM pairs), then analog-matches coarse GCM ensemble-boosted heatwaves over Paris / Western Europe. Uses EnScale (Schillinger et al., arXiv:2509.26258; code https://github.com/m-schillinger/enscale). No separate official code link for this paper.",
     "source": "routine-2026-11-16"
+  },
+  {
+    "title": "Towards Physics-Constrained Rectified Flow for Climate Downscaling: What Projections Can Certify?",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.22283",
+    "code_url": "https://github.com/arunshar/pc-rf",
+    "tags": [
+      "rectified-flow",
+      "physics-constrained",
+      "precipitation",
+      "ERA5",
+      "CorrDiff",
+      "flow-matching"
+    ],
+    "venue": "AIAS+ 2026",
+    "note": "Conditional rectified-flow downscaler with soft penalties (wind divergence, negative precipitation, mass drift) and an inference projection that enforces non-negativity and domain-mean mass. Evaluated on ERA5; projection certifies NVR/MCE, but the paper reports no separable perceptual gain of the penalties over RF-base. Official code (arunshar/pc-rf) documents known issues, including a wrong ERA5 divergence operator; no trained checkpoints included.",
+    "source": "routine-2026-11-22"
   }
 ]

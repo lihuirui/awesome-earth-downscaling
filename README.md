@@ -4,7 +4,7 @@
 
 > 仅收录已核验链接的论文、代码与工具；禁止编造 arXiv ID、作者或年份。
 
-**Last updated:** 2026-11-16 (Asia/Shanghai) · Maintainer: [lihuirui](https://github.com/lihuirui)
+**Last updated:** 2026-11-22 (Asia/Shanghai) · Maintainer: [lihuirui](https://github.com/lihuirui)
 
 **Stats:** see [`data/papers.json`](data/papers.json) for structured DL / recent entries.
 
@@ -62,10 +62,10 @@
 
 - **CorrDiff (Residual Corrective Diffusion)** — Mardani, Brenowitz, Cohen, Pathak et al. (2023) [[arXiv](https://arxiv.org/abs/2309.15214)] — _Two-step UNet mean + corrector diffusion; km-scale atmospheric downscaling (e.g. 25 km → 2 km); core Earth-2 generative downscaling method._
 - **PhysicsNeMo CorrDiff example** — NVIDIA training/inference recipes [[Docs](https://docs.nvidia.com/physicsnemo/latest/physicsnemo/examples/weather/corrdiff/README.html)] [[Code](https://github.com/NVIDIA/physicsnemo)] — _Official example (legacy path; see also regional weather diffusion)._
-- **Earth2Studio** — NVIDIA open framework for AI weather/climate workflows; includes CorrDiff diagnostics models [[GitHub](https://github.com/NVIDIA/earth2studio)] [[CorrDiff source](https://github.com/NVIDIA/earth2studio/blob/main/earth2studio/models/dx/corrdiff.py)]
+- **Earth2Studio** — NVIDIA open framework for AI weather/climate workflows; includes CorrDiff diagnostics models; current release **v1.0.0** (2026-11-18) [[GitHub](https://github.com/NVIDIA/earth2studio)] [[Release](https://github.com/NVIDIA/earth2studio/releases/tag/1.0.0)] [[CorrDiff source](https://github.com/NVIDIA/earth2studio/blob/main/earth2studio/models/dx/corrdiff.py)]
 - **CorrDiff NIM / API overview** — production-oriented CorrDiff downscaling service docs [[Docs](https://docs.nvidia.com/nim/earth-2/corrdiff/latest/overview.html.md)]
 - **CorrDiff US (GEFS→HRRR)** — CONUS generative downscaling model card [[API ref](https://docs.api.nvidia.com/nim/reference/nvidia-corrdiff)]
-- **CorrDiffEra5Hrrr (distilled)** — official Earth2Studio diagnostic (v0.20.0, 2026-10-29) [[Docs](https://nvidia.github.io/earth2studio/main/modules/generated/models/dx/CorrDiffEra5Hrrr/)] [[Source](https://github.com/NVIDIA/earth2studio/blob/main/earth2studio/models/dx/corrdiff_era5_hrrr.py)] — _ERA5 0.25° → 3 km HRRR over CONUS; default `load_model` is the distilled 2-step generator (pass `distilled_model=False` for the 50-step teacher)._
+- **CorrDiffEra5Hrrr (distilled)** — official Earth2Studio diagnostic (added v0.20.0, 2026-10-29; still in v1.0.0) [[Docs](https://nvidia.github.io/earth2studio/main/modules/generated/models/dx/CorrDiffEra5Hrrr/)] [[Source](https://github.com/NVIDIA/earth2studio/blob/main/earth2studio/models/dx/corrdiff_era5_hrrr.py)] — _ERA5 0.25° → 3 km HRRR over CONUS; default `load_model` is the distilled 2-step generator (pass `distilled_model=False` for the 50-step teacher). In v1.0.0 the model is `DomainAdaptable`: `with_region` supports subdomain inference over a geographic box._
 - **CorrDiff CMIP6→ERA5** — official Earth2Studio / NVIDIA checkpoint [[HF](https://huggingface.co/nvidia/corrdiff-cmip6-era5)] [[Source](https://github.com/NVIDIA/earth2studio/blob/main/earth2studio/models/dx/corrdiff_cmip6.py)] — _CorrDiff U-Net; daily CMIP6 fields on a common ~300 km grid → hourly 25 km ERA5-like global fields (spatial and temporal)._
 - **PrecipCorrDiff** — Kumar, Chattopadhyay, Bachhav et al. (2026) [[arXiv](https://arxiv.org/abs/2610.19994)] — _CorrDiff-style residual diffusion for IMD precipitation 0.25°→0.0625°; improves extremes & spatial bias vs SRGAN / original CorrDiff._
 - **CorrFlow (residual flow matching)** — SIMO Group (2026) [[Code](https://github.com/SIMOGroup/CorrFlow)] — _Keeps CorrDiff two-stage residual mean+corrector; replaces diffusion corrector with conditional flow matching (1 Euler step); ERA5→ERA5-Land precip (SE Asia). arXiv ID not verified yet._
@@ -85,6 +85,7 @@
 - **CorrFlow** — residual flow-matching corrector on CorrDiff stack [[Code](https://github.com/SIMOGroup/CorrFlow)]
 - **Operator-Aware Posterior Sampling** — Saccardi, Saathof, Joseph & Dauwels (2026) [[arXiv](https://arxiv.org/abs/2610.39592)] [[Code](https://github.com/CarloSaccardi/operator-aware-weather-downscaling)] — _Diffusion prior with a learned coarse operator and per-channel guidance normalization; ERA5→CERRA multivariate downscaling without retraining the prior._
 - **CD-FFM (likelihood functional flow matching)** — Liu, Toropainen, Kheder & Boy (2026) [[arXiv](https://arxiv.org/abs/2610.33482)] [[Code](https://github.com/Holmes-Alan/CD-FFM)] — _Treats the HR field as a continuous random field queryable at any location/resolution; ERA5→1 km daily temperature over Fennoscandia, also transfers to precip; reports faster sampling than a CorrDiff-style baseline._
+- **PC-RF** — physics-constrained rectified flow for climate downscaling; see Physics-informed section [[arXiv](https://arxiv.org/abs/2611.22283)] [[Code](https://github.com/arunshar/pc-rf)]
 - **Hybrid ML-analog downscaling of unprecedented climate extremes** — Effenberger, Roemer, Schillinger, Samarin, Fischer & Knutti (2026) [[arXiv](https://arxiv.org/abs/2611.15284)] — _EnScale generative RCM emulation plus analog matching to downscale coarse GCM ensemble-boosted heatwaves (Paris / Western Europe) and sample multi-model storylines. Uses EnScale [[arXiv](https://arxiv.org/abs/2509.26258)] [[Code](https://github.com/m-schillinger/enscale)]; this paper has no separate official code link._
 
 ### GAN / CNN / U-Net
@@ -107,6 +108,7 @@
 ### Physics-informed & Hybrid
 
 - **Hard-Constrained Deep Learning for Climate Downscaling** — Harder et al. [[arXiv](https://arxiv.org/abs/2208.05424)] — _Hard physical constraints in DL downscaling._
+- **PC-RF (Physics-Constrained Rectified Flow)** — Sharma (2026) [[arXiv](https://arxiv.org/abs/2611.22283)] [[Code](https://github.com/arunshar/pc-rf)] *(AIAS+ 2026)* — _Conditional rectified-flow downscaler with training penalties (wind divergence, negative precipitation, mass drift) and an inference projection that clamps precipitation at zero and rescales it to the coarse domain mean. Evaluated on ERA5; the paper reports the projection certifies non-negativity and mass balance, while the penalties add no perceptual gain separable from training budget versus an unconstrained RF baseline. Official code documents known issues (including a wrong ERA5 divergence operator)._
 
 ## Remote Sensing Spatial Downscaling / 遥感空间降尺度
 
@@ -157,7 +159,7 @@ Curated from Milan Janosov’s [10(+2) Papers & Resources on Spatial Downscaling
 
 ## Libraries & Toolkits / 工具库
 
-- **[Earth2Studio](https://github.com/NVIDIA/earth2studio)** — AI weather/climate workflows (includes CorrDiff; v0.20.0 adds distilled CorrDiffEra5Hrrr and CorrDiff CMIP6)
+- **[Earth2Studio](https://github.com/NVIDIA/earth2studio)** — AI weather/climate workflows (includes CorrDiff; **v1.0.0** general release 2026-11-18, breaking xarray interfaces; v0.20.0 added distilled CorrDiffEra5Hrrr and CorrDiff CMIP6; v1.0.0 adds `DomainAdaptable` subdomain inference for CorrDiff ERA5-HRRR) [[Release](https://github.com/NVIDIA/earth2studio/releases/tag/1.0.0)]
 - **[PhysicsNeMo](https://github.com/NVIDIA/physicsnemo)** — NVIDIA physics-ML framework (CorrDiff / regional diffusion examples)
 - **[scikit-downscale](https://github.com/pangeo-data/scikit-downscale)** — statistical downscaling
 - **[ClimateDiffuse](https://github.com/robbiewatt1/ClimateDiffuse)** — diffusion climate downscaling
@@ -168,6 +170,7 @@ Curated from Milan Janosov’s [10(+2) Papers & Resources on Spatial Downscaling
 
 Selected verified entries (also mirrored in `data/papers.json`):
 
+- 2026 — PC-RF (physics-constrained rectified flow for climate downscaling) [[arXiv](https://arxiv.org/abs/2611.22283)] [[Code](https://github.com/arunshar/pc-rf)] *(AIAS+ 2026)*
 - 2026 — Hybrid ML-analog downscaling of unprecedented climate extremes [[arXiv](https://arxiv.org/abs/2611.15284)]
 - 2026 — PROLA (predictive spatiotemporal weather downscaling) [[arXiv](https://arxiv.org/abs/2611.11318)] [[Code](https://github.com/yms020615/PROLA)] *(NeurIPS 2026)*
 - 2026 — Spatially varying quantile downscaling of Spain summer Tmax [[arXiv](https://arxiv.org/abs/2611.12677)]

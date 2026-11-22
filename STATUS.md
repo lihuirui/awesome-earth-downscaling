@@ -1,6 +1,6 @@
 # STATUS — awesome-earth-downscaling
 
-**Updated:** 2026-11-16 (Asia/Shanghai)
+**Updated:** 2026-11-22 (Asia/Shanghai)
 
 ## First-fill method
 - Gemini/agy capacity was saturated; first content authored via lightweight WebSearch + WebFetch + `gh` repo search (quota-conscious).
@@ -20,6 +20,13 @@
 
 ## Update routine
 Every ~3 days: search new arXiv/GitHub hits for weather/climate/hydro downscaling + Earth-2/CorrDiff; merge verified entries into README + data/papers.json; push if changed.
+
+## 2026-11-22 — Incremental sweep (post 2026-11-16)
+Added **1** verified paper (abs + code HTTP 200) and noted Earth2Studio **v1.0.0**:
+- PC-RF (Physics-Constrained Rectified Flow) [[arXiv:2611.22283](https://arxiv.org/abs/2611.22283)] [[AIAS+ 2026]] + [code](https://github.com/arunshar/pc-rf) — conditional rectified-flow climate downscaler with physics penalties and an inference projection (non-negativity + domain-mean mass) on ERA5. The paper reports the projection certifies NVR/MCE; penalties add no separable perceptual gain vs RF-base. Code README documents known issues (wrong ERA5 divergence operator; no included checkpoints).
+- Earth2Studio **v1.0.0** ([release 2026-11-18 22:01 UTC](https://github.com/NVIDIA/earth2studio/releases/tag/1.0.0); PyPI 1.0.0) — general release with breaking xarray interfaces; CorrDiff ERA5-HRRR is `DomainAdaptable` (`with_region` subdomain inference). Existing CorrDiffEra5Hrrr / CorrDiff CMIP6→ERA5 source and docs links still HTTP 200.
+
+The 2026-11-19 scheduled run did not land a commit; this sweep covers 2026-11-16–11-22. CorrFlow still has no verified arXiv ID. Skipped as out of scope or not a statistical downscaling methods paper: MAGIC GRACE DA [[arXiv:2611.15421](https://arxiv.org/abs/2611.15421)] (already skipped 11-16); PARDIG precipitation estimation [[arXiv:2611.13941](https://arxiv.org/abs/2611.13941)]; PECAN distributed hydrologic modeling [[arXiv:2611.13346](https://arxiv.org/abs/2611.13346)]; One2N recursive forecast-resolution refinement [[arXiv:2611.12249](https://arxiv.org/abs/2611.12249)] (submitted 2026-11-09; forecasting, not listed here); CV/video uses of the word “downscaling”. Method: lightweight arXiv API + GitHub/PyPI/docs HTTP checks (agy not used this run).
 
 ## 2026-11-16 — Incremental sweep (post 2026-11-13)
 Added **1** verified paper (abs HTTP 200):
