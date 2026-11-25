@@ -1,6 +1,6 @@
 # STATUS — awesome-earth-downscaling
 
-**Updated:** 2026-11-22 (Asia/Shanghai)
+**Updated:** 2026-11-25 (Asia/Shanghai)
 
 ## First-fill method
 - Gemini/agy capacity was saturated; first content authored via lightweight WebSearch + WebFetch + `gh` repo search (quota-conscious).
@@ -16,10 +16,17 @@
   - Link official SDSM / ClimDown paper DOIs in classical section
   - Optional: bibtex export from papers.json
   - Track arXiv ID for SIMOGroup/CorrFlow when published (repo pushed 2026-11-09; title still has no matching arXiv)
-  - Optional backlog (predate this sweep; not added): CORDEX-ML-Bench [[arXiv:2606.29172](https://arxiv.org/abs/2606.29172)]; China 3 km CorrDiff [[arXiv:2512.05377](https://arxiv.org/abs/2512.05377)]; analog-initialized latent transport km-scale downscaling [[arXiv:2610.03736](https://arxiv.org/abs/2610.03736)]
+  - Optional backlog (predate this sweep; not added): CORDEX-ML-Bench [[arXiv:2606.29172](https://arxiv.org/abs/2606.29172)]; China 3 km CorrDiff [[arXiv:2512.05377](https://arxiv.org/abs/2512.05377)]; analog-initialized latent transport km-scale downscaling [[arXiv:2610.03736](https://arxiv.org/abs/2610.03736)]; CEDDAR precip diffusion [[DOI](https://doi.org/10.5194/egusphere-2026-1139)] [[code](https://github.com/TheaQG/CEDDAR)] (EGUsphere discussion started 2026-03-09; no arXiv); scale-adaptive joint spatiotemporal SR [[arXiv:2604.21903](https://arxiv.org/abs/2604.21903)] [[code](https://github.com/mdefez/Precipitation_Dowscaling)] (v1 April 2026; v2 2026-11-19)
 
 ## Update routine
 Every ~3 days: search new arXiv/GitHub hits for weather/climate/hydro downscaling + Earth-2/CorrDiff; merge verified entries into README + data/papers.json; push if changed.
+
+## 2026-11-25 — Incremental sweep (post 2026-11-22)
+Added **2** verified papers (abs HTTP 200; MUNDO code HTTP 200):
+- Beyond Resolution (inference-time parameterized temporal consistency) [[arXiv:2611.27641](https://arxiv.org/abs/2611.27641)] — noise-conditioned teacher-forcing on a diffusion U-Net GCM→RCM downscaler; one inference noise parameter interpolates between autoregressive and per-timestep independent sampling. Hourly Europe AWI-CM1 (1°) → ICON (0.11°, regridded to 0.25°) for precipitation and T2m; AR rollouts up to six months show no progressive degradation, and AR better preserves daily precip maxima. Authors state code will be released upon publication; no public repo verified this run.
+- MUNDO [[arXiv:2611.30868](https://arxiv.org/abs/2611.30868)] + [code](https://github.com/dataymeric/mundo) — multiresolution generative temporal downscaling with a null-space parameterization that enforces exact observation consistency in one network evaluation (interpolation and disaggregation). Evaluated on Lorenz-96, 2D physical systems, and multivariate ERA5 over Europe.
+
+No new Earth2Studio stable release after v1.0.0 (1.1.0a0 is unreleased). CorrFlow still has no verified arXiv ID (2610.24750 is a different CorrFlow paper). Left on the optional backlog (older than this window): CEDDAR [[DOI](https://doi.org/10.5194/egusphere-2026-1139)] + [code](https://github.com/TheaQG/CEDDAR) (EGUsphere 2026-03-09; no arXiv); scale-adaptive joint spatiotemporal SR [[arXiv:2604.21903](https://arxiv.org/abs/2604.21903)] (v1 April 2026; v2 2026-11-19) + [code](https://github.com/mdefez/Precipitation_Dowscaling). Method: lightweight arXiv API + WebSearch + HTTP checks (agy not used this run).
 
 ## 2026-11-22 — Incremental sweep (post 2026-11-16)
 Added **1** verified paper (abs + code HTTP 200) and noted Earth2Studio **v1.0.0**:

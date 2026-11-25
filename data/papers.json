@@ -687,5 +687,41 @@
     "venue": "AIAS+ 2026",
     "note": "Conditional rectified-flow downscaler with soft penalties (wind divergence, negative precipitation, mass drift) and an inference projection that enforces non-negativity and domain-mean mass. Evaluated on ERA5; projection certifies NVR/MCE, but the paper reports no separable perceptual gain of the penalties over RF-base. Official code (arunshar/pc-rf) documents known issues, including a wrong ERA5 divergence operator; no trained checkpoints included.",
     "source": "routine-2026-11-22"
+  },
+  {
+    "title": "Beyond Resolution: Inference-Time Parameterized Temporal Consistency in Generative Regional Climate Downscaling",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.27641",
+    "code_url": "",
+    "tags": [
+      "diffusion",
+      "temporal-consistency",
+      "GCM",
+      "RCM",
+      "precipitation",
+      "temperature",
+      "Europe",
+      "U-Net"
+    ],
+    "venue": "arXiv",
+    "note": "Noise-conditioned teacher-forcing on a diffusion U-Net GCM→RCM downscaler; a single inference noise parameter interpolates between autoregressive and per-timestep independent sampling. Hourly European-domain AWI-CM1 (1°) → ICON (0.11°, regridded to 0.25°) for precipitation and T2m. AR rollouts up to six months show no progressive degradation; AR better preserves daily precip maxima than independent sampling (up to 2× underestimation of maxima in PTI). Authors state code will be released upon publication; no public repo verified this run.",
+    "source": "routine-2026-11-25"
+  },
+  {
+    "title": "MUNDO: a multiresolution generative framework for temporal downscaling",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.30868",
+    "code_url": "https://github.com/dataymeric/mundo",
+    "tags": [
+      "temporal-downscaling",
+      "generative",
+      "ERA5",
+      "disaggregation",
+      "interpolation",
+      "Europe"
+    ],
+    "venue": "arXiv",
+    "note": "Multiresolution unified temporal downscaling with a null-space parameterization that enforces exact observation consistency in one network evaluation for both interpolation and disaggregation. Reverse-Markov hierarchy models only degrees of freedom lost between adjacent resolutions. Evaluated on two-scale Lorenz-96, four 2D physical systems, and multivariate ERA5 reanalysis over Europe; official code at dataymeric/mundo.",
+    "source": "routine-2026-11-25"
   }
 ]

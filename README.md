@@ -4,7 +4,7 @@
 
 > 仅收录已核验链接的论文、代码与工具；禁止编造 arXiv ID、作者或年份。
 
-**Last updated:** 2026-11-22 (Asia/Shanghai) · Maintainer: [lihuirui](https://github.com/lihuirui)
+**Last updated:** 2026-11-25 (Asia/Shanghai) · Maintainer: [lihuirui](https://github.com/lihuirui)
 
 **Stats:** see [`data/papers.json`](data/papers.json) for structured DL / recent entries.
 
@@ -87,6 +87,8 @@
 - **CD-FFM (likelihood functional flow matching)** — Liu, Toropainen, Kheder & Boy (2026) [[arXiv](https://arxiv.org/abs/2610.33482)] [[Code](https://github.com/Holmes-Alan/CD-FFM)] — _Treats the HR field as a continuous random field queryable at any location/resolution; ERA5→1 km daily temperature over Fennoscandia, also transfers to precip; reports faster sampling than a CorrDiff-style baseline._
 - **PC-RF** — physics-constrained rectified flow for climate downscaling; see Physics-informed section [[arXiv](https://arxiv.org/abs/2611.22283)] [[Code](https://github.com/arunshar/pc-rf)]
 - **Hybrid ML-analog downscaling of unprecedented climate extremes** — Effenberger, Roemer, Schillinger, Samarin, Fischer & Knutti (2026) [[arXiv](https://arxiv.org/abs/2611.15284)] — _EnScale generative RCM emulation plus analog matching to downscale coarse GCM ensemble-boosted heatwaves (Paris / Western Europe) and sample multi-model storylines. Uses EnScale [[arXiv](https://arxiv.org/abs/2509.26258)] [[Code](https://github.com/m-schillinger/enscale)]; this paper has no separate official code link._
+- **Beyond Resolution (parameterized temporal consistency)** — Glawion, Polz, Kunstmann, Fersch, Ludwig, Sánchez-Benítez & Chwala (2026) [[arXiv](https://arxiv.org/abs/2611.27641)] — _Noise-conditioned teacher-forcing trains a diffusion U-Net GCM→RCM downscaler so one inference noise parameter interpolates between autoregressive and per-timestep independent sampling. Hourly European-domain AWI-CM1 (1°) → ICON (0.11°, regridded to 0.25°) for precipitation and T2m; AR rollouts up to six months show no progressive degradation, and AR better preserves daily precip maxima than independent sampling. Authors state code will be released upon publication._
+- **MUNDO (multiresolution unified temporal downscaling)** — Delefosse, Tavernier, Keisler, Charantonis & Béréziat (2026) [[arXiv](https://arxiv.org/abs/2611.30868)] [[Code](https://github.com/dataymeric/mundo)] — _Generative temporal downscaling with a null-space parameterization that enforces exact observation consistency in one network evaluation (interpolation and disaggregation). A multiresolution reverse-Markov hierarchy models only the degrees of freedom lost between adjacent resolutions; evaluated on Lorenz-96, 2D physical systems, and multivariate ERA5 over Europe._
 
 ### GAN / CNN / U-Net
 
@@ -170,6 +172,8 @@ Curated from Milan Janosov’s [10(+2) Papers & Resources on Spatial Downscaling
 
 Selected verified entries (also mirrored in `data/papers.json`):
 
+- 2026 — Beyond Resolution: inference-time parameterized temporal consistency in generative regional climate downscaling [[arXiv](https://arxiv.org/abs/2611.27641)]
+- 2026 — MUNDO (multiresolution generative temporal downscaling) [[arXiv](https://arxiv.org/abs/2611.30868)] [[Code](https://github.com/dataymeric/mundo)]
 - 2026 — PC-RF (physics-constrained rectified flow for climate downscaling) [[arXiv](https://arxiv.org/abs/2611.22283)] [[Code](https://github.com/arunshar/pc-rf)] *(AIAS+ 2026)*
 - 2026 — Hybrid ML-analog downscaling of unprecedented climate extremes [[arXiv](https://arxiv.org/abs/2611.15284)]
 - 2026 — PROLA (predictive spatiotemporal weather downscaling) [[arXiv](https://arxiv.org/abs/2611.11318)] [[Code](https://github.com/yms020615/PROLA)] *(NeurIPS 2026)*
