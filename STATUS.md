@@ -1,6 +1,6 @@
 # STATUS — awesome-earth-downscaling
 
-**Updated:** 2026-11-25 (Asia/Shanghai)
+**Updated:** 2026-11-28 (Asia/Shanghai)
 
 ## First-fill method
 - Gemini/agy capacity was saturated; first content authored via lightweight WebSearch + WebFetch + `gh` repo search (quota-conscious).
@@ -20,6 +20,12 @@
 
 ## Update routine
 Every ~3 days: search new arXiv/GitHub hits for weather/climate/hydro downscaling + Earth-2/CorrDiff; merge verified entries into README + data/papers.json; push if changed.
+
+## 2026-11-28 — Incremental sweep (post 2026-11-25)
+Added **1** verified paper (abs + code HTTP 200):
+- BridgeSRDA [[arXiv:2611.33720](https://arxiv.org/abs/2611.33720)] + [code](https://github.com/Pranithhazard/BridgeSRDA) — probabilistic super-resolution data assimilation with forecast-informed stochastic interpolants; idealized 3D quasi-geostrophic flow only (no real reanalysis yet), ensembles underdispersed per the authors.
+
+Earth2Studio still v1.0.0 (latest release 2026-11-18 22:01 UTC). CorrFlow repo description now reads “One-step residual flow matching for probabilistic precipitation downscaling: Accuracy, dispersion and cost”, but no matching arXiv entry found yet. Skipped: CV/medical/game super-resolution papers; GitHub-only student/coursework downscaling repos without a paper. Method: lightweight arXiv API + GitHub search + HTTP checks (agy not used this run).
 
 ## 2026-11-25 — Incremental sweep (post 2026-11-22)
 Added **2** verified papers (abs HTTP 200; MUNDO code HTTP 200):

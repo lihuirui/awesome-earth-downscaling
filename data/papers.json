@@ -723,5 +723,22 @@
     "venue": "arXiv",
     "note": "Multiresolution unified temporal downscaling with a null-space parameterization that enforces exact observation consistency in one network evaluation for both interpolation and disaggregation. Reverse-Markov hierarchy models only degrees of freedom lost between adjacent resolutions. Evaluated on two-scale Lorenz-96, four 2D physical systems, and multivariate ERA5 reanalysis over Europe; official code at dataymeric/mundo.",
     "source": "routine-2026-11-25"
+  },
+  {
+    "title": "BridgeSRDA: Efficient Probabilistic Super-Resolution Data Assimilation with Forecast-Informed Stochastic Interpolants",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.33720",
+    "code_url": "https://github.com/Pranithhazard/BridgeSRDA",
+    "tags": [
+      "super-resolution",
+      "data-assimilation",
+      "stochastic-interpolants",
+      "generative",
+      "ensemble",
+      "quasi-geostrophic"
+    ],
+    "venue": "arXiv",
+    "note": "Probabilistic super-resolution data assimilation: a network learns forecast-informed stochastic transport from low-resolution forecasts plus sparse noisy observations to sample high-resolution analysis ensembles. Idealized 3D quasi-geostrophic narrow-jet flow only; approaches HR LETKF accuracy at lower cost (~17 s vs 31 s per analysis, 30 members), ~32.5% lower MAE ratio than deterministic 4D-SRDA; ensembles underdispersed (~62% coverage of nominal 90% intervals).",
+    "source": "routine-2026-11-28"
   }
 ]
